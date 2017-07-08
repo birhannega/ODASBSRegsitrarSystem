@@ -7,14 +7,14 @@
 	<div class="panel-body">
 		<ul class="list-group">
 			<li class="list-group-item"><a href="Registersubject.jsp"><strong>
-						<span class="fa fa-book"></span> Register subject
+						<span class="glyphicon glyphcon-user"></span> Register subject
 				</strong></a></li>
 
 			<li class="list-group-item"><a href="registerTeacher.jsp"><strong>
 						<span class="glyphicon glyphcon-user"></span> Register Teacher
 				</strong></a></li>
 			<li class="list-group-item"><a href="studeregistration.jsp"><strong>
-						<span class="glyphicon glyphicon-userss"></span> Register Student
+						<span class="glyphicon glyphicon-users"></span> Register Student
 				</strong></a></li>
 			<li class="list-group-item"><a href="AddUseraccount.jsp"><strong>
 						<span class="glyphicon glyphicon-plus-sign"> </span> Create User
