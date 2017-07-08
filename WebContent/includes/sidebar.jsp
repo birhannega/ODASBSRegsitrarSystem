@@ -7,14 +7,14 @@
 	<div class="panel-body">
 		<ul class="list-group">
 			<li class="list-group-item"><a href="Registersubject.jsp"><strong>
-						<span class="glyphicon glyphcon-user"></span> Register subject
+						<span class="glyphicon glyphicon-book"></span> Register subject
 				</strong></a></li>
 
 			<li class="list-group-item"><a href="registerTeacher.jsp"><strong>
-						<span class="glyphicon glyphcon-user"></span> Register Teacher
+						<span class="glyphicon glyphicon-align-justify"></span> Register Teacher
 				</strong></a></li>
 			<li class="list-group-item"><a href="studeregistration.jsp"><strong>
-						<span class="glyphicon glyphicon-users"></span> Register Student
+						<span class="glyphicon glyphicon-user"></span> Register Student
 				</strong></a></li>
 			<li class="list-group-item"><a href="AddUseraccount.jsp"><strong>
 						<span class="glyphicon glyphicon-plus-sign"> </span> Create User
@@ -22,7 +22,7 @@
 				</strong></a></li>
 
 			<li class="list-group-item"><a href="enrol.jsp"><strong>
-						<span class="glyphicon glyphicon-plus-sign"> </span>
+						<span class="glyphicon glyphicon-random"> </span>
 						Subject-Teacher Assignment
 				</strong></a></li>
 			<li class="list-group-item"><a href="EnrolTeacher.jsp"> <span

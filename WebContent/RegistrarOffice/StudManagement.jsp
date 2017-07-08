@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ page import="java.util.Date"%>
+<%@ page import="javax.servlet.*,java.text.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,6 +29,27 @@
 			<%@ include file="withdraw.jsp"%>
 		</div>
 	</div>
+	
+	<div class="footor container col-lg-12 col-md-8 col-sm-12 col-xs-12">
+		
+		<p class="text-info well well-sm ">This system is developed by volunteer
+			students graduated from Adama science and Technology University for
+			Oromiya Development Association</p>
+
+		<%
+ 
+Date date=new Date(); 
+SimpleDateFormat sdf=new SimpleDateFormat("YYYY");
+		SimpleDateFormat lsdf=new SimpleDateFormat("MMMM");
+
+String year=sdf.format(date);
+String month=lsdf.format(date);
+out.println("<center>"+"<h5>"+"&copy ODASBS"+" "+month+" "+year+"</h5>"+"</center");
+
+%>
+
+	</div>
+
 
 
 </body>
