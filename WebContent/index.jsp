@@ -43,6 +43,7 @@ body {
 	<div class="container-fluid">
 		<div class=" col-xs-offset-2 col-md-6 col-lg-offset-2 pull-left "
 			style="margin-top: 5px">
+			<div class="row">
 			<div class="panel panel-default ">
 				<div class="alert-success panel-heading  text-center">
 					<h5 class="text-info">
@@ -55,14 +56,14 @@ body {
 					<div class="panel-content">
 
 						<form action="${pageContext.request.contextPath}/LoginAuthenicate"
-							method="post" id="loginform" class="form-group ">
+							method="post" id="loginform" class="form-group col-lg-10">
 
 							<h4 style="color: red" style="color:red">${error}</h4>
 						
 							
 
 
-							<div class="form-group ">
+							<div class="form-group col-lg-offset-2">
 								<div class="input-group">
 									<span class="input-group-addon "> <span
 										class="fa fa-user fa-lg"> </span></span> <input
@@ -71,7 +72,7 @@ body {
 								</div>
 							</div>
 
-							<div class="form-group  ">
+							<div class="form-group  col-lg-offset-2">
 								<div class="input-group">
 									<span class="input-group-addon "><span
 										class="fa fa-key fa-lg pull-right"> </span></span> <input
@@ -103,28 +104,31 @@ body {
 
 					</div>
 				</div>
-
+             </div>
 			</div>
 		</div>
 	</div>
 
 
-	<footer class=" container">
-		<hr>
-		<p class="text-center">This system is developed by volunteer
+<div class="footor container col-lg-12 col-md-8 col-sm-12 col-xs-12">
+		
+		<p class="text-info well well-sm ">This system is developed by volunteer
 			students graduated from Adama science and Technology University for
 			Oromiya Development Association</p>
+
 		<%
-			Date date = new Date();
-			SimpleDateFormat Sdf = new SimpleDateFormat("YYYY");
-			SimpleDateFormat Lsdf = new SimpleDateFormat("MMMM");
+ 
+Date date=new Date(); 
+SimpleDateFormat sdf=new SimpleDateFormat("YYYY");
+		SimpleDateFormat lsdf=new SimpleDateFormat("MMMM");
 
-			String year = Sdf.format(date);
-			String month = Lsdf.format(date);
-			out.println("<center>" + "<h5>" + "&copy" + " " + month + " " + year + "</h5>" + "</center");
-		%>
+String year=sdf.format(date);
+String month=lsdf.format(date);
+out.println("<center>"+"<h5>"+"&copy ODASBS"+" "+month+" "+year+"</h5>"+"</center");
 
-	</footer>
+%>
+
+	</div>
 	<script type="text/javascript" src="resources/jquery/jquery-1.11.1.js"></script>
 	<script type="text/javascript"
 		src="resources/jquery/jquery.validate.js"></script>
