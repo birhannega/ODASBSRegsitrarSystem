@@ -110,7 +110,7 @@ body {
 	</div>
 
 
-<div class="footor container col-lg-12 col-md-8 col-sm-12 col-xs-12">
+<div class=" container">
 		
 		<p class="text-info well well-sm ">This system is developed by volunteer
 			students graduated from Adama science and Technology University for
