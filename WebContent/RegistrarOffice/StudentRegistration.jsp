@@ -52,7 +52,7 @@
 				<div class="panel-content">
 					<div class="form-group">
 						<form action="${pageContext.request.contextPath}/RegisterStudent"
-							method="post" onsubmit="return checkForm(this);">
+							method="post" onsubmit="return checkForm(this);" id="registerstudent">
 
 							<div class="container-fluid">
 								<strong>${studregistered} ${oops}</strong>
@@ -68,7 +68,7 @@
 								<div class="input-group ">
 									<span class="input-group-addon"> <span>First Name</span></span>
 									<input type="text" name="fname" class="form-control"
-										required="required">
+										>
 								</div>
 
 							</div>
@@ -299,7 +299,7 @@
 
 
 
-		<script type="text/javascript">
+		<!-- <script type="text/javascript">
 			function checkForm(form) {
 				if (form.fname.value == "") {
 					alert("error: first name can't be empty");
@@ -400,16 +400,87 @@
 					return false;
 				}
 			}
-		</script>
+		</script> -->
 
-		<script type="text/javascript">
-			$(document).ready(function() {
+       
+	     <script type="text/javascript" src="../resources/jquery/jquery.validate.js"></script>
+			<script type="text/javascript">
+		$(document).ready( function (){
+			$( "#registerstudent" ).validate( {
+				rules: {
+					fname: {
+						required: true,
+						minlength: 4
+					},
+					lname: {
+						required: true,
+						minlength: 5
+					},
+					mname: {
+						required: true,
+						minlength: 5,
+						
+					},
+					type:"required",
+					branch:"required",
+					agree1: "required"
+				},
+				messages: {
+					firstname1: "Please select branch",
+					lastname1: "Please enter your lastname",
+					username1: {
+						required: "Please enter a username",
+						minlength: "Your username must consist of at least 2 characters"
+					},
+					password1: {
+						required: "Please provide a password",
+						minlength: "Your password must be at least 5 characters long"
+					},
+					confirm_password1: {
+						required: "Please provide a password",
+						minlength: "Your password must be at least 5 characters long",
+						equalTo: "Please enter the same password as above"
+					},
+					email1: "Please enter a valid email address",
+					agree1: "Please accept our policy"
+				},
+				errorElement: "em",
+				errorPlacement: function ( error, element ) {
+					// Add the `help-block` class to the error element
+					error.addClass( "help-block" );
 
-			});
+					// Add `has-feedback` class to the parent div.form-group
+					// in order to add icons to inputs
+					element.parents( ".col-sm-5" ).addClass( "has-feedback" );
 
-			var bootstrapButton = $.fn.bdate.noConflict() // return $.fn.button to previously assigned value
-			$.fn.bootstrapBtn = bootstrapButton
-		</script>
+					if ( element.prop( "type" ) === "checkbox" ) {
+						error.insertAfter( element.parent( "label" ) );
+					} else {
+						error.insertAfter( element );
+					}
+
+					// Add the span element, if doesn't exists, and apply the icon classes to it.
+					if ( !element.next( "span" )[ 0 ] ) {
+						$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+					}
+				},
+				success: function ( label, element ) {
+					// Add the span element, if doesn't exists, and apply the icon classes to it.
+					if ( !$( element ).next( "span" )[ 0 ] ) {
+						$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+					}
+				},
+				highlight: function ( element, errorClass, validClass ) {
+					$( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+					$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+				},
+				unhighlight: function ( element, errorClass, validClass ) {
+					$( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+					$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+				}
+			} );
+		} );
+	</script>
 		<%
 			}
 		%>
