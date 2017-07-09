@@ -62,14 +62,36 @@
 
 				<div class="col-lg-4 "
 					style="background-color: teal; border-radius: 6px; color: white">
-					<h1 class="text-center">500</h1>
+					<h1 class="text-center">
+					<%
+					Statement studentcount=dbconnection.getConnection().createStatement();
+					ResultSet rs_studentcount=studentcount.executeQuery("Select count(stud_id) from TBL_student where Status='active' and branch='"+branch+"'");
+					if(rs_studentcount.next())
+					{
+						out.println(rs_studentcount.getString(1));
+					}
+					
+					%>
+					
+					</h1>
 					<p class="text-capitalize text-center">Students Learning</p>
 
 
 				</div>
 				<div class="col-lg-4 "
 					style="background-color: #F7F7F9; border-radius: 6px;">
-					<h1 class="text-center text-info">50</h1>
+					<h1 class="text-center text-info">
+					<%
+					Statement teachercount=dbconnection.getConnection().createStatement();
+					ResultSet rs_teachertcount=teachercount.executeQuery("Select count(TeacherId) from TBL_teacher where Status='active' and branch='"+branch+"'");
+					if(rs_teachertcount.next())
+					{
+						out.println(rs_teachertcount.getString(1));
+					}
+					
+					%>
+					
+					</h1>
 					<p class="text-capitalize text-center">Teachers Teaching</p>
 
 				</div>
