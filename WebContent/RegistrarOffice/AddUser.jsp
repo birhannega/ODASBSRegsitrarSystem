@@ -6,7 +6,6 @@
 else
 {
 	String branch=null,username=session.getAttribute("registrar").toString();
-	
 	Dbconnection dbcon = new Dbconnection();
 	Statement st_logged_user=dbcon.getConnection().createStatement();
 	ResultSet rs_logged_user=st_logged_user.executeQuery("select branch from TBL_users where userName='"+username+"'");
@@ -18,31 +17,33 @@ else
 
 <%@ page import="databaseConnection.Dbconnection"%>
 <%@ page import="java.sql.*"%>
+<link rel="stylesheet" type="text/css"
+	href="../bootstrap/font-awesome/css/font-awesome.min.css" />
+<script type="text/javascript"
+	src="../resources/jquery/jquery-1.11.1.js"></script>
+<script type="text/javascript"
+	src="../resources/jquery/jquery.validate.js"></script>
+<style type="text/css">
+.error {
+	color: red;
+}
+</style>
 
-
-	
-
-     <link rel="stylesheet" type="text/css" href="../bootstrap/font-awesome/css/font-awesome.min.css" />
-	<script type="text/javascript" src="../resources/jquery/jquery-1.11.1.js"></script>
-	<script type="text/javascript" src="../resources/jquery/jquery.validate.js"></script>
-	<style type="text/css">
-	.error{
-	color:red;
-	}
-	</style>
-
+<div class="container-fluid">
 	<div class="container-fluid">
-			<div class="container-fluid">
-				<div class="panel panel-default ">
-					<div class="panel-heading">
-						<h3 class="panel-title">Add User Account</h3>
-					</div>
-					<div class="panel-body">
-					<strong>${failed} ${added} <span class="bg-red">${UserNameexists}</span>  ${idexists} ${notadded}</strong>
-						<form id="adduser" method="post" class="form-group" action="${pageContext.request.contextPath}/AddUserAccount">
-						
-	
-						<%
+		<div class="panel panel-default ">
+			<div class="panel-heading">
+				<h3 class="panel-title">Add User Account</h3>
+			</div>
+			<div class="panel-body">
+				<strong>${failed} ${added} <span class="bg-red">${UserNameexists}</span>
+					${idexists} ${notadded}
+				</strong>
+				<form id="adduser" method="post" class="form-group"
+					action="${pageContext.request.contextPath}/AddUserAccount">
+
+
+					<%
 					
 						request.getSession().setAttribute("failed", null);
 						request.getSession().setAttribute("UserNameexists", null);
@@ -51,31 +52,33 @@ else
 						request.getSession().setAttribute("notadded", null);
 						request.getSession().setAttribute("added", null);
 						%>
-						
-								<div class="form-group col-lg-6 col-sm-6 col-md-6" style="margin-top:-10px">
-								<strong> Branch</strong>
-									<input type="text" class="form-control" value="<%=branch %>" id="firstname1" name="branch" readonly="readonly"> 
-									
-								</div>
-							
-					
-								<div class="form-group col-lg-6 col-md-6" style="margin-top:-10px">
-								<strong>Select user role</strong>
-									<select class="form-control" id="type" name="type">
-									<option value="">choose type</option>
-									    <option value="T">Teacher</option>
-										<option value="R">Data encoder</option>
-										
-									</select>
-								</div>
-						
 
-							
-								
-								<div class="form-group col-lg-6 col-md-6" style="margin-top:-10px">
-								<strong>Select User ID</strong>
-										<select required name="teacherid" class="form-control">
-										<option value="">choose TeacherID</option>
+					<div class="form-group col-lg-6 col-sm-6 col-md-6"
+						style="margin-top: -10px">
+						<strong> Branch</strong> <input type="text" class="form-control"
+							value="<%=branch %>" id="firstname1" name="branch"
+							readonly="readonly">
+
+					</div>
+
+
+					<div class="form-group col-lg-6 col-md-6" style="margin-top: -10px">
+						<strong>Select user role</strong> <select class="form-control"
+							id="type" name="type">
+							<option value="">choose type</option>
+							<option value="T">Teacher</option>
+							<option value="R">Data encoder</option>
+
+						</select>
+					</div>
+
+
+
+
+					<div class="form-group col-lg-6 col-md-6" style="margin-top: -10px">
+						<strong>Select User ID</strong> <select required name="teacherid"
+							class="form-control">
+							<option value="">choose TeacherID</option>
 
 
 
@@ -95,44 +98,48 @@ else
 							%>
 
 						</select>
-								</div>
-								<div class="form-group col-lg-6 col-md-6" style="margin-top:-10px">
-									<strong>Enter Username</strong>
-									<input type="text" class="form-control" id="username1" name="username1" placeholder="Username" />
-								</div>
-							
-
-							
-
-						
-							
-								<div class="form-group col-lg-6 col-md-6" style="margin-top:-10px">
-									<strong>Enter Password</strong>
-									<input type="password" class="form-control" id="password1" name="password1" placeholder="Password" />
-								</div>
-							
-
-							
-								
-								<div class="form-group col-lg-6 col-md-6" style="margin-top:-10px">
-								<strong>Confirm password</strong>
-									<input type="password" class="form-control" id="confirm_password1" name="confirm_password1" placeholder="Confirm password" />
-							</div>
-
-
-							<div class="form-group">
-								<div class="pull-right ">
-									<button type="submit" class="btn btn-primary " name="signup1" >Create User Account</button>
-								</div>
-							</div>
-						</form>
 					</div>
-				</div>
+					<div class="form-group col-lg-6 col-md-6" style="margin-top: -10px">
+						<strong>Enter Username</strong> <input type="text"
+							class="form-control" id="username1" name="username1"
+							placeholder="Username" />
+					</div>
+
+
+
+
+
+
+					<div class="form-group col-lg-6 col-md-6" style="margin-top: -10px">
+						<strong>Enter Password</strong> <input type="password"
+							class="form-control" id="password1" name="password1"
+							placeholder="Password" />
+					</div>
+
+
+
+
+					<div class="form-group col-lg-6 col-md-6" style="margin-top: -10px">
+						<strong>Confirm password</strong> <input type="password"
+							class="form-control" id="confirm_password1"
+							name="confirm_password1" placeholder="Confirm password" />
+					</div>
+
+
+					<div class="form-group">
+						<div class="pull-right ">
+							<button type="submit" class="btn btn-primary " name="signup1">Create
+								User Account</button>
+						</div>
+					</div>
+				</form>
 			</div>
-	
+		</div>
 	</div>
-	<%} %>
-	<script type="text/javascript">
+
+</div>
+<%} %>
+<script type="text/javascript">
 		
 
 		$( document ).ready( function () {

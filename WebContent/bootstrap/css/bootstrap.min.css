@@ -24,7 +24,7 @@ audio, canvas, progress, video {
 	vertical-align: baseline
 }
 
-audio:not ([controls]){
+audio:not ([controls] ){
 	display: none;
 	height: 0
 }
@@ -86,7 +86,7 @@ img {
 	border: 0
 }
 
-svg:not (:root){
+svg:not (:root ){
 	overflow: hidden
 }
 
@@ -193,7 +193,7 @@ table {
 td, th {
 	padding: 0
 }
-	/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
+/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
 	*, :after, :before {
 		color: #000 !important;
@@ -3923,6 +3923,7 @@ tbody.collapse.in {
 	border-top: 0;
 	border-bottom: 4px dashed;
 	border-bottom: 4px solid\9
+
 }
 
 .dropup .dropdown-menu, .navbar-fixed-bottom .dropdown .dropdown-menu {
@@ -3977,7 +3978,8 @@ tbody.collapse.in {
 	margin-left: 5px
 }
 
-.btn-group>.btn:not (:first-child):not (:last-child):not (.dropdown-toggle){
+.btn-group>.btn:not (:first-child ):not (:last-child ):not (.dropdown-toggle
+	){
 	border-radius: 0
 }
 
@@ -3985,13 +3987,13 @@ tbody.collapse.in {
 	margin-left: 0
 }
 
-.btn-group>.btn:first-child:not (:last-child):not (.dropdown-toggle){
+.btn-group>.btn:first-child:not (:last-child ):not (.dropdown-toggle ){
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0
 }
 
-.btn-group>.btn:last-child:not (:first-child), .btn-group>.dropdown-toggle:not
-	(:first-child){
+.btn-group>.btn:last-child:not (:first-child ), .btn-group>.dropdown-toggle:not
+	 (:first-child ){
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0
 }
@@ -4071,37 +4073,37 @@ tbody.collapse.in {
 	margin-left: 0
 }
 
-.btn-group-vertical>.btn:not (:first-child):not (:last-child){
+.btn-group-vertical>.btn:not (:first-child ):not (:last-child ){
 	border-radius: 0
 }
 
-.btn-group-vertical>.btn:first-child:not (:last-child){
+.btn-group-vertical>.btn:first-child:not (:last-child ){
 	border-top-left-radius: 4px;
 	border-top-right-radius: 4px;
 	border-bottom-right-radius: 0;
 	border-bottom-left-radius: 0
 }
 
-.btn-group-vertical>.btn:last-child:not (:first-child){
+.btn-group-vertical>.btn:last-child:not (:first-child ){
 	border-top-left-radius: 0;
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 4px;
 	border-bottom-left-radius: 4px
 }
 
-.btn-group-vertical>.btn-group:not (:first-child):not (:last-child)>.btn
+.btn-group-vertical>.btn-group:not (:first-child ):not (:last-child )>.btn
 	{
 	border-radius: 0
 }
 
-.btn-group-vertical>.btn-group:first-child:not (:last-child)>.btn:last-child,
-	.btn-group-vertical>.btn-group:first-child:not (:last-child)>.dropdown-toggle
+.btn-group-vertical>.btn-group:first-child:not (:last-child )>.btn:last-child,
+	.btn-group-vertical>.btn-group:first-child:not (:last-child )>.dropdown-toggle
 	{
 	border-bottom-right-radius: 0;
 	border-bottom-left-radius: 0
 }
 
-.btn-group-vertical>.btn-group:last-child:not (:first-child)>.btn:first-child
+.btn-group-vertical>.btn-group:last-child:not (:first-child )>.btn:first-child
 	{
 	border-top-left-radius: 0;
 	border-top-right-radius: 0
@@ -4208,9 +4210,9 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
 	display: table-cell
 }
 
-.input-group .form-control:not (:first-child):not (:last-child),
-	.input-group-addon:not (:first-child):not (:last-child),
-	.input-group-btn:not (:first-child):not (:last-child){
+.input-group .form-control:not (:first-child ):not (:last-child ),
+	.input-group-addon:not (:first-child ):not (:last-child ),
+	.input-group-btn:not (:first-child ):not (:last-child ){
 	border-radius: 0
 }
 
@@ -4252,7 +4254,8 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
 .input-group .form-control:first-child, .input-group-addon:first-child,
 	.input-group-btn:first-child>.btn, .input-group-btn:first-child>.btn-group>.btn,
 	.input-group-btn:first-child>.dropdown-toggle, .input-group-btn:last-child>.btn-group:not
-	(:last-child)>.btn, .input-group-btn:last-child>.btn:not (:last-child):not (.dropdown-toggle){
+	 (:last-child )>.btn, .input-group-btn:last-child>.btn:not (:last-child
+	):not (.dropdown-toggle ){
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0
 }
@@ -5557,7 +5560,8 @@ a.thumbnail.active, a.thumbnail:focus, a.thumbnail:hover {
 	color: #843534
 }
 
-@-webkit-keyframes progress-bar-stripes {
+@
+-webkit-keyframes progress-bar-stripes {
 	from {background-position: 40px 0
 }
 
@@ -5566,7 +5570,8 @@ to {
 }
 
 }
-@-o-keyframes progress-bar-stripes {
+@
+-o-keyframes progress-bar-stripes {
 	from {background-position: 40px 0
 }
 
@@ -5575,7 +5580,8 @@ to {
 }
 
 }
-@keyframes progress-bar-stripes {
+@
+keyframes progress-bar-stripes {
 	from {background-position: 40px 0
 }
 
@@ -7172,7 +7178,8 @@ button.close {
 	position: fixed
 }
 
-@-ms-viewport {
+@
+-ms-viewport {
 	width: device-width
 }
 

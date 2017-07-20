@@ -55,9 +55,9 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div class=" container-fluid ">
-	<%
+		<%
 	
 	
 	
@@ -75,9 +75,9 @@
 			<% 
 			out.println("<center>" + "&copy" + " " + month + " " + year +  "</center");
 			%>
-         </p>
-		
-		
+		</p>
+
+
 	</div>
 
 </body>

@@ -1,3 +1,4 @@
+
 <%if(session.getAttribute("registrar")==null){
 	response.sendRedirect("../index.jsp");
 	
@@ -6,12 +7,13 @@ else{%>
 <%@page import="java.sql.*"%>
 <%@page import="databaseConnection.Dbconnection"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="../bootstrap/css/bootstrap.min.css" />
 <title>teacher</title>
 <script type="text/javascript">
 function printpage() {
@@ -28,25 +30,25 @@ function printpage() {
 </script>
 </head>
 <body>
-<div class="container-fluid">
-<table class="table table-bordered" >
+	<div class="container-fluid">
+		<table class="table table-bordered">
 
-<thead>
-<tr>
-<th colspan="3"><strong>List of Home Room Teacher</strong></th>
+			<thead>
+				<tr>
+					<th colspan="3"><strong>List of Home Room Teacher</strong></th>
 
-</tr>
-<tr>
-<th>FirstName</th>
-<th>LastName</th>
-<th>Gender</th>
-<th>Address</th>
-<th>Grade</th>
-<th>Section</th>
-</tr>
-<thead>
-<tbody>
-<%
+				</tr>
+				<tr>
+					<th>FirstName</th>
+					<th>LastName</th>
+					<th>Gender</th>
+					<th>Address</th>
+					<th>Grade</th>
+					<th>Section</th>
+				</tr>
+			<thead>
+			<tbody>
+				<%
 
 int i=1;
 String first=null,last=null,address=null,Gender=null,Qualified=null,branch=null,section=null, Grade=null,teacherid=null;
@@ -73,15 +75,15 @@ while(rs_list.next()){
 	address=rs_list.getString("address");
 
 }%>
-	<tr>
-<td><%=first %></td>
-<td><%=last%></td>
-<td><%=Gender %></td>
-<td><%=address %></td>
-<td><%=Grade %></td>
-<td><%=section%></td>
-</tr>
-<%
+				<tr>
+					<td><%=first %></td>
+					<td><%=last%></td>
+					<td><%=Gender %></td>
+					<td><%=address %></td>
+					<td><%=Grade %></td>
+					<td><%=section%></td>
+				</tr>
+				<%
 i++;
 
 
@@ -89,12 +91,13 @@ i++;
 
 
 
-</tbody>
-</table>
-  		<div class="container-fluid">
-<input type="submit" onclick="printpage();" value="print this report"  id="printpagebutton"class="pull-right btn btn-primary"/> 
-</div>
-	
-</div>
+			</tbody>
+		</table>
+		<div class="container-fluid">
+			<input type="submit" onclick="printpage();" value="print this report"
+				id="printpagebutton" class="pull-right btn btn-primary" />
+		</div>
+
+	</div>
 </body>
 </html>

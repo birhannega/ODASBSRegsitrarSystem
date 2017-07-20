@@ -52,7 +52,8 @@
 				<div class="panel-content">
 					<div class="form-group">
 						<form action="${pageContext.request.contextPath}/RegisterStudent"
-							method="post" onsubmit="return checkForm(this);" id="registerstudent">
+							method="post" onsubmit="return checkForm(this);"
+							id="registerstudent">
 
 							<div class="container-fluid">
 								<strong>${studregistered} ${oops}</strong>
@@ -67,8 +68,7 @@
 
 								<div class="input-group ">
 									<span class="input-group-addon"> <span>First Name</span></span>
-									<input type="text" name="fname" class="form-control"
-										>
+									<input type="text" name="fname" class="form-control">
 								</div>
 
 							</div>
@@ -76,8 +76,8 @@
 							<div class="col-lg-4 form-group col-md-6">
 
 								<div class="input-group ">
-									<span class="input-group-addon"> <span>Middle Name</span></span>
-									<input type="text" name="mname" class="form-control"
+									<span class="input-group-addon"> <span>Middle
+											Name</span></span> <input type="text" name="mname" class="form-control"
 										required="required">
 								</div>
 
@@ -272,8 +272,8 @@
 
 							<div class="form-group col-lg-4 col-md-6 pull-right">
 								<div class="input-group ">
-									<button class="btn btn-primary btn-set  "
-										style="float: right" type="submit">
+									<button class="btn btn-primary btn-set  " style="float: right"
+										type="submit">
 										<span class="fa  fa-sav"></span> Register Student
 									</button>
 								</div>
@@ -285,9 +285,6 @@
 
 		</div>
 
-		<script type="text/javascript"
-			src="../resources/js/jquery-1.11.3.min.js"></script>
-		<script src="../external/jquery/jquery.js"></script>
 		<script src="jquery-ui.js"></script>
 		<script>
 			$("#bdate").datepicker({
@@ -298,113 +295,8 @@
 		</script>
 
 
-
-		<!-- <script type="text/javascript">
-			function checkForm(form) {
-				if (form.fname.value == "") {
-					alert("error: first name can't be empty");
-					form.fname.focus();
-					return false;
-
-				}
-				re = /^[A-Za-z]+$/;
-				if (!re.test(form.fname.value)) {
-					alert("Error: first name must contain only letters");
-					form.fname.focus();
-					return false;
-				}
-				if (form.lname.value == "") {
-					alert("error:last name can't be empty");
-					form.lname.focus();
-					return false;
-				}
-				re = /^[A-Za-z]+$/;
-				if (!re.test(form.fname.value)) {
-					alert("error: last name must contain only letters")
-					form.lname.focus();
-					return false;
-
-				}
-				var curdate = new date().getFullYear();
-				var bdate = form.bdate.value.getFullYear;
-
-				var age = curdate - bdate;
-
-				if (form.bdate.value == "" || age < 7) {
-
-					alert("error:birth date can't be empty");
-					form.bdate.focus();
-					return false;
-				}
-				re = /^\d{1,2}\/\d{1,2}\/\d{4}$/;
-				if (!re.test(form.bdate.value)) {
-					alert("error:birth date must contain date");
-					form.bdate.focus();
-					return false;
-					var genderM = form.gender_male.value;
-					var genderF = form.gender_female.value;
-
-					if (genderM.checked == false && genderF.checked == false) {
-						alert("You must select male or female");
-						return false;
-					}
-				}
-				if (form.cname.value == "") {
-					alert("error:contact person name can't be empty");
-					form.cname.focus();
-					return false;
-
-				}
-				re = /^[a-zA-Z\s]*$/;
-				if (!re.test(form.cname.value)) {
-					alert("Error: contact person name must contain only letters");
-					form.cname.focus();
-					return false;
-				}
-				if (form.address.value == "") {
-					alert("error: address can't be empty");
-					form.address.focus();
-					return false;
-
-				}
-				re = /^[a-zA-Z0-9-\s]*$/;
-				if (!re.test(form.address.value)) {
-					alert("Error: address must contain letters,numbers,letter and numbers");
-					form.address.focus();
-					return false;
-
-				}
-				if (form.tel.value == "") {
-					alert("error: phone number can't be empty");
-					form.tel.focus();
-					return false;
-
-				}
-				re = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
-				if (!re.test(form.tel.value)) {
-					alert("Error:phone number must contain only number");
-					form.tel.focus();
-					return false;
-				}
-
-				if (form.status.value == "") {
-					alert("error: status can't be empty");
-					form.status.focus();
-					return false;
-
-				}
-				re = /^[A-Za-z]+$/;
-				if (!re.test(form.status.value)) {
-					alert("Error: status must contain only letters");
-					form.status.focus();
-					return false;
-				}
-			}
-		</script> -->
-
-       
-	     <script type="text/javascript" src="../resources/jquery/jquery.validate.js"></script>
-			<script type="text/javascript">
+		
+		<script type="text/javascript">
 		$(document).ready( function (){
 			$( "#registerstudent" ).validate( {
 				rules: {

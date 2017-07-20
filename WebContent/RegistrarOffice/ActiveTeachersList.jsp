@@ -1,3 +1,4 @@
+
 <%
 if(session.getAttribute("registrar")==null)
 {
@@ -23,45 +24,51 @@ response.sendRedirect("../index.jsp");
 <%@page import="java.sql.Connection"%>
 <%@page import="databaseConnection.Dbconnection"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="../bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" href="../resources/css/print.css" media="print">
-<link rel="stylesheet" type="text/css" href="../bootstrap/font-awesome/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="../bootstrap/font-awesome/css/font-awesome.min.css" />
 <title>Active Teachers</title>
 </head>
 <body class="container-fluid">
-<div class=" row">
-<%@ include file="../includes/vector.jsp" %>
-</div>
+	<div class=" row">
+		<%@ include file="../includes/vector.jsp"%>
+	</div>
 
-<div class=" row" style="margin-top: -15px">
-<%@ include file="../includes/nav.html" %>
-</div>
+	<div class=" row" style="margin-top: -15px">
+		<%@ include file="../includes/nav.html"%>
+	</div>
 
-<div class="container-fluid col-lg-3 col-md-3" style="margin-top: -10px">
-<%@ include file="../includes/sidebar.jsp" %>
-</div>
-<div class="container-fluid col-lg-9 col-md-9" style="margin-top: -10px">
-<table class="table table-bordered" id="teacherlist">
-<thead>
-<tr>
-<th colspan="5" class=" active text-success text-uppercase">List of Currently Active Teachers in ODA special Boarding school <%out.println(branch); %>branch</th>
+	<div class="container-fluid col-lg-3 col-md-3"
+		style="margin-top: -10px">
+		<%@ include file="../includes/sidebar.jsp"%>
+	</div>
+	<div class="container-fluid col-lg-9 col-md-9"
+		style="margin-top: -10px">
+		<table class="table table-bordered" id="teacherlist">
+			<thead>
+				<tr>
+					<th colspan="5" class=" active text-success text-uppercase">List
+						of Currently Active Teachers in ODA special Boarding school <%out.println(branch); %>branch
+					</th>
 
-</tr>
-<tr>
-<th>No.</th>
-<th>Teacher ID </th>
-<th>Full Name </th>
-<th>Qualification </th>
-<th>Hire Date </th>
-</tr>
-</thead>
-<tbody>
-<%
+				</tr>
+				<tr>
+					<th>No.</th>
+					<th>Teacher ID</th>
+					<th>Full Name</th>
+					<th>Qualification</th>
+					<th>Hire Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%
 Date date=new Date();
 SimpleDateFormat format=new SimpleDateFormat("Y");
 String Year=format.format(date);
@@ -74,31 +81,36 @@ ResultSet resultSet=statement.executeQuery("select * from TBL_Teacher where Stat
 while(resultSet.next())
 {
 %>
-<tr>
-<td><%=j %></td>
-<td><%=resultSet.getString(1) %></td>
-<td><%=resultSet.getString("FirstName")+" "+resultSet.getString("LastName") %></td>
-<td><%=resultSet.getString("qualified") %></td>
-<td><%=resultSet.getString("hiredate") %></td>
-</tr>
-<%	
+				<tr>
+					<td><%=j %></td>
+					<td><%=resultSet.getString(1) %></td>
+					<td><%=resultSet.getString("FirstName")+" "+resultSet.getString("LastName") %></td>
+					<td><%=resultSet.getString("qualified") %></td>
+					<td><%=resultSet.getString("hiredate") %></td>
+				</tr>
+				<%	
 i++; 
 j++;
 }
 %>
-</tbody>
-<tfoot> <tr> <td colspan="5" class="text-center"> <span >Total of <%=i %> Teachers Found </span></td></tr></tfoot>
-</table>
-</div>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="5" class="text-center"><span>Total of <%=i %>
+							Teachers Found
+					</span></td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
 	<div class="footor container col-lg-12 col-md-8 col-sm-12 col-xs-12">
-		
-		<p class="text-info well well-sm ">This system is developed by volunteer
-			students graduated from Adama science and Technology University for
-			Oromiya Development Association</p>
-<script type="text/javascript"  src="../resources/js/jquery.js"></script>
-<script type="text/javascript"
-	src="../resources/js/jquery.bdt.js"></script>
-	<script type="text/javascript">
+
+		<p class="text-info well well-sm ">This system is developed by
+			volunteer students graduated from Adama science and Technology
+			University for Oromiya Development Association</p>
+		<script type="text/javascript" src="../resources/js/jquery.js"></script>
+		<script type="text/javascript" src="../resources/js/jquery.bdt.js"></script>
+		<script type="text/javascript">
 	$().ready(function(){
 		
 		$("#teacherlist").bdt();

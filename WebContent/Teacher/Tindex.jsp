@@ -38,23 +38,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css"
 	href="../bootstrap/css/bootstrap.css" />
-	 <link rel="stylesheet" type="text/css" href="../bootstrap/font-awesome/css/font-awesome.min.css" />
-  
+<link rel="stylesheet" type="text/css"
+	href="../bootstrap/font-awesome/css/font-awesome.min.css" />
 
-    <script type="text/javascript" src="../resources/js/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript"
+	src="../resources/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
 </head>
-<body style="font-family: Trebuchet MS, sans-serif; ">
+<body style="font-family: Trebuchet MS, sans-serif;">
 
-<%@ include file="../includes/vector.jsp" %>
+	<%@ include file="../includes/vector.jsp"%>
 	<div class="container-fluid" style="margin-top: -12px">
-		
-	
-		<div class="col-lg-3 col-sm-3 col-md-3" >
+
+
+		<div class="col-lg-3 col-sm-3 col-md-3">
 			<%@ include file="../includes/Tsidebar.jsp"%>
 		</div>
 		<div class="col-lg-9 col-md-9 col-sm-12">
-		<%@ include file="../carousel.jsp"%>
+			<%@ include file="../carousel.jsp"%>
 		</div>
 		<%-- <span class="pull-right col-sm-12 col-md-3 col-lg-3 ">
 			<%@ include file="Viewprofile.jsp"%>

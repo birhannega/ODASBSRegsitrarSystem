@@ -82,7 +82,7 @@ public class Homeroom_List {
 			
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+		
 			e.printStackTrace();
 		}
 		

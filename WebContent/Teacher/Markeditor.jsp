@@ -1,3 +1,4 @@
+
 <%
 	if (session.getAttribute("user") == null) 
 	{
@@ -48,11 +49,12 @@
 					String rome_Grade=rSet.getString(1),Section=rSet.getString(2);
 					out.print(rome_Grade);
 			     %>
-				<form action="" method="post" class="form-inline pull-right" id="transcript" autocomplete="off">
+				<form action="" method="post" class="form-inline pull-right"
+					id="transcript" autocomplete="off">
 					<div class="form-group">
 						<label>Student ID</label> <input class="form-control"
-							name="studentID" value="ODASBS/"> <label>Select Semister</label> <select
-							class="form-control" name="semister">
+							name="studentID" value="ODASBS/"> <label>Select
+							Semister</label> <select class="form-control" name="semister">
 							<option value="">choose semister</option>
 							<option>I</option>
 							<option>II</option>
@@ -92,44 +94,46 @@
 					ResultSet resultSet_su = editstatement
 							.executeQuery("select Subject_id,Total from TBL_mark where Grade='" + rome_Grade + "' and semister='"+semister+"' and Stud_id='"+stud_id+"' order by Subject_id");
 					%>
-					<form class="form-group" method="post">
-                   
-					
-					<%
+		<form class="form-group" method="post">
+
+
+			<%
 					while(resultSet_su.next())
 					{
 						String subject=resultSet_su.getString("Subject_id");
 				
 						String name="sub"+i;
 						%>
-						 <div class="form-group col-lg-4 col-md-4">
-						<label class="label-control" for="sub"><%=subject%></label>
+			<div class="form-group col-lg-4 col-md-4">
+				<label class="label-control" for="sub"><%=subject%></label> <input
+					class="form-control" name="<%=name%>"
+					value="<%=resultSet_su.getString("total")%>">
+			</div>
 
-                       <input class="form-control" name="<%=name%>" value="<%=resultSet_su.getString("total")%>">
-                         </div>
-                         
-						<%
+			<%
 						i++;
 					}
 					%>
-					 <button type="submit" class="btn btn-primary pull-right">Save Edited Mark</button>
-					
- 
-					</form>
-					<%
+			<button type="submit" class="btn btn-primary pull-right">Save
+				Edited Mark</button>
+
+
+		</form>
+		<%
 		
 			}
 					else
 					{
 					%>
-						
-						<div class="container">
-						
-						
-						<div class="alert alert-warning ">please enter correct student ID</div>
-						
-						</div>
-					<%
+
+		<div class="container">
+
+
+			<div class="alert alert-warning ">please enter correct student
+				ID</div>
+
+		</div>
+		<%
 					}
 	}
 		%>

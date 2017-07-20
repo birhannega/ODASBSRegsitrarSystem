@@ -25,9 +25,8 @@
 <script type="text/javascript" src="../bootstrap/js/bootstrap.js"></script>
 <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
 <style type="text/css">
-#body{
-font-family: "Trebuchet MS", sans-serif;
-	
+#body {
+	font-family: "Trebuchet MS", sans-serif;
 }
 </style>
 </head>
@@ -37,29 +36,29 @@ font-family: "Trebuchet MS", sans-serif;
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 
-				<h3 class="text-left">OLMA special boarding school student Record
-					Management System</h3>
+				<h3 class="text-left">OLMA special boarding school student
+					Record Management System</h3>
 
 			</div>
 		</div>
 
 		<div class="col-lg-3 col-sm-4 col-md-4">
-			
 
-				<%@ include file="../includes/Tsidebar.jsp" %>
-			</div>
-		
 
-		<div class="col-lg-9 col-sm-8 col-md-8" style="margin-left:-20px">
+			<%@ include file="../includes/Tsidebar.jsp"%>
+		</div>
 
-			
-				
-					<%@ include file="hrmtabs2.jsp" %>
-			
+
+		<div class="col-lg-9 col-sm-8 col-md-8" style="margin-left: -20px">
 
 
 
-			
+			<%@ include file="hrmtabs2.jsp"%>
+
+
+
+
+
 
 
 
@@ -71,9 +70,9 @@ font-family: "Trebuchet MS", sans-serif;
 			students graduated from Adama science and Technology University for
 			Oromiya Development Association</p>
 
-	
+
 
 	</div>
-<%} %>
+	<%} %>
 </body>
 </html>

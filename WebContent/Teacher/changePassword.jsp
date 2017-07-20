@@ -4,17 +4,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>JQuery-validation demo | Bootstrap</title>
+<title>JQuery-validation demo | Bootstrap</title>
 
-	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
 
-	<script type="text/javascript" src="../resources/jquery/jquery-1.11.1.js"></script>
-	<script type="text/javascript" src="../resources/jquery/jquery.validate.js"></script>
-	<style type="text/css">
-	.error{
-	color:red;
-	}
-	</style>
+<script type="text/javascript"
+	src="../resources/jquery/jquery-1.11.1.js"></script>
+<script type="text/javascript"
+	src="../resources/jquery/jquery.validate.js"></script>
+<style type="text/css">
+.error {
+	color: red;
+}
+</style>
 </head>
 <body>
 	<div class="container-fluid">
@@ -25,61 +27,74 @@
 						<h3 class="panel-title">Add User Account</h3>
 					</div>
 					<div class="panel-body">
-						<form id="changepassword" method="post" class="form-horizontal" action="${pageContext.request.contextPath}/ChangePassword">
+						<form id="changepassword" method="post" class="form-horizontal"
+							action="${pageContext.request.contextPath}/ChangePassword">
 							<h3>${added}</h3>
-					         <h4>${failed}</h4>
+							<h4>${failed}</h4>
 							<h6 style="color: red">${idexists }</h6>
-							
+
 							<div class="form-group">
-								<label class="col-sm-4 control-label" for="branch">Select branch</label>
+								<label class="col-sm-4 control-label" for="branch">Select
+									branch</label>
 								<div class="col-sm-6 ">
 									<select class="form-control" id="branch" name="branch">
-									    <option>Adama</option>
+										<option>Adama</option>
 										<option>Ambo</option>
-											<option>Sendafa</option>
+										<option>Sendafa</option>
 									</select>
 								</div>
 							</div>
 
 							<div class="form-group">
-								<label class="col-sm-4 control-label" for="lastname1">Select User ID</label>
+								<label class="col-sm-4 control-label" for="lastname1">Select
+									User ID</label>
 								<div class="col-sm-6">
 									<input class="form-control" name="teacherid">
 								</div>
 							</div>
 
 							<div class="form-group">
-								<label class="col-sm-4 control-label" for="username1">Enter Username</label>
+								<label class="col-sm-4 control-label" for="username1">Enter
+									Username</label>
 								<div class="col-sm-6">
-									<input type="text" class="form-control" id="username1" name="username1" placeholder="Username" />
+									<input type="text" class="form-control" id="username1"
+										name="username1" placeholder="Username" />
 								</div>
 							</div>
 
 							<div class="form-group">
-								<label class="col-sm-4 control-label" for="password1">Enter old Password</label>
+								<label class="col-sm-4 control-label" for="password1">Enter
+									old Password</label>
 								<div class="col-sm-6">
-									<input type="password" class="form-control" id="password_old" name="password_old" placeholder="old Password" />
+									<input type="password" class="form-control" id="password_old"
+										name="password_old" placeholder="old Password" />
 								</div>
 							</div>
 
 							<div class="form-group">
-								<label class="col-sm-4 control-label" for="password1">Enter new Password</label>
+								<label class="col-sm-4 control-label" for="password1">Enter
+									new Password</label>
 								<div class="col-sm-6">
-									<input type="password" class="form-control" id="password1" name="password1" placeholder="Password" />
+									<input type="password" class="form-control" id="password1"
+										name="password1" placeholder="Password" />
 								</div>
 							</div>
 
 							<div class="form-group">
-								<label class="col-sm-4 control-label" for="confirm_password1">Confirm password</label>
+								<label class="col-sm-4 control-label" for="confirm_password1">Confirm
+									password</label>
 								<div class="col-sm-6">
-									<input type="password" class="form-control" id="confirm_password1" name="confirm_password1" placeholder="Confirm password" />
+									<input type="password" class="form-control"
+										id="confirm_password1" name="confirm_password1"
+										placeholder="Confirm password" />
 								</div>
 							</div>
 
 
 							<div class="form-group">
 								<div class="col-sm-9 col-sm-offset-4">
-									<button type="submit" class="btn btn-primary btn-lg" name="signup1" >Add User</button>
+									<button type="submit" class="btn btn-primary btn-lg"
+										name="signup1">Add User</button>
 								</div>
 							</div>
 						</form>

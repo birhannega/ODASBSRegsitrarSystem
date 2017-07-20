@@ -99,10 +99,10 @@
 			} else
 			{
 		%>
-  <div>
-		<span class="text-warning"> <strong>The ID you entered
-				didn't match to any student try again </strong>
-		</span>
+		<div>
+			<span class="text-warning"> <strong>The ID you
+					entered didn't match to any student try again </strong>
+			</span>
 		</div>
 		<%
 			}

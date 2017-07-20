@@ -1,3 +1,4 @@
+
 <%
 if(session.getAttribute("user")==null)
 {
@@ -40,6 +41,6 @@ else
 			<%@include file="Markeditor.jsp"%>
 		</div>
 	</div>
-<%} %>
+	<%} %>
 </body>
 </html>

@@ -56,7 +56,7 @@
 		ps_update.setString(11, id);
 		checker=ps_update.executeUpdate();
 	} catch (SQLException e) {
-		// TODO Auto-generated catch block
+		
 		e.printStackTrace();
 	}
 	return checker;

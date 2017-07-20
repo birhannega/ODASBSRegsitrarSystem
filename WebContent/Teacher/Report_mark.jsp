@@ -1,7 +1,7 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.sql.*"%>
 <%@page import="databaseConnection.Dbconnection"%>
-<%@ page import="java.util.Date" %>
+<%@ page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -50,17 +50,19 @@
 						+ teacherID + "'");
 %>
 <body>
-<div>
-			<%@ include file="../includes/vector.jsp"%></div>
-			
+	<div>
+		<%@ include file="../includes/vector.jsp"%></div>
+
 	<div class="container-fluid">
-	<div><a href="Tindex.jsp"><strong>Back to main menu</strong></a></div>
+		<div>
+			<a href="Tindex.jsp"><strong>Back to main menu</strong></a>
+		</div>
 		<div class="container-fluid">
 			<div>
 				<form action="" class="form-inline pull-right" method="post">
-				
+
 					<select class="form-control" name="grade_se">
-                           <option value="">Choose Grade and section</option>
+						<option value="">Choose Grade and section</option>
 						<%
 							while (rs_sub.next()) {
 									String grade = rs_sub.getString(1);
@@ -73,7 +75,9 @@
 							}
 						%>
 					</select>
-					<button class="btn btn-primary"><span class="fa fa-arrow-right"></span></button>
+					<button class="btn btn-primary">
+						<span class="fa fa-arrow-right"></span>
+					</button>
 				</form>
 				<%
 					String grade_sec = request.getParameter("grade_se");
@@ -91,10 +95,10 @@
 							section = String.valueOf(sec1);
 				%>
 			</div>
-			
-			
-			
-			
+
+
+
+
 		</div>
 		<div class="info text-center">
 			<h4 class="text-center">
@@ -102,16 +106,14 @@
 				<%=branch%>
 				branch
 			</h4>
-			<strong class="text-center text-uppercase">Mark list for students of Grade
-			<%
+			<strong class="text-center text-uppercase">Mark list for
+				students of Grade <%
 			if(Grade.contains("9"))
 			{
 				Grade="9";
 			}
 			
-			%>
-			
-				<%=Grade%><%=section%></strong>
+			%> <%=Grade%><%=section%></strong>
 		</div>
 		<table class="table table-bordered table-condensed table-responsive"
 			id="marklist">
@@ -147,9 +149,11 @@
 								if(i==0)
 								{
 									%>
-									<tr><td>no record found</td></tr>
-									
-									<%
+				<tr>
+					<td>no record found</td>
+				</tr>
+
+				<%
 								}
 								else
 								{
@@ -326,31 +330,36 @@ mar from workheet1
  %>
 								</strong>
 							</p>
-							
+
 							<p>Signature _______________________</p>
 							<p>Date ____________________________</p>
-				     	</span> <span class="col-lg-4 pull-right">
+					</span> <span class="col-lg-4 pull-right">
 							<p>Deputy Directors' name __________________</p>
 							<p>Signature ______________________________</p>
-							<p>Date 
-							<% Date date=new Date(); 
+							<p>
+								Date
+								<% Date date=new Date(); 
 							SimpleDateFormat simpleFormat=new SimpleDateFormat("d/M/YYYY");
 							String formateddate=simpleFormat.format(date);
 							out.println(formateddate);
-							%></p>
+							%>
+							</p>
 
-					</span>
-					
-					
-					</td>
-					
+					</span></td>
+
 				</tr>
 			</tfoot>
 		</table>
-		<span class="pull-right">			<button id="printpagebutton" type="button" class="btn btn-primary pull-right" onclick="printpage()"><span class="glyphicon glyphicon-print"> <strong>print  this report</strong> </span></button>
+		<span class="pull-right">
+			<button id="printpagebutton" type="button"
+				class="btn btn-primary pull-right" onclick="printpage()">
+				<span class="glyphicon glyphicon-print"> <strong>print
+						this report</strong>
+				</span>
+			</button>
 		</span>
 	</div>
-<!-- 	<script type="text/javascript">
+	<!-- 	<script type="text/javascript">
 		$(document).ready(function() {
 
 			$("#marklist").bdt();

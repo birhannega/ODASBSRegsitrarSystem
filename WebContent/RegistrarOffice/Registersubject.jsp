@@ -23,14 +23,14 @@
 
 </head>
 
-<body >
-	<div class="container-fluid" >
-	<div class="row">
-		<%@include file="../includes/vector.jsp" %>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<%@include file="../includes/vector.jsp"%>
 		</div>
 		<div style="margin-top: -18px" class="row">
-			<%@ include file="../includes/nav.html" %>
-			</div>
+			<%@ include file="../includes/nav.html"%>
+		</div>
 
 		<div class="col-lg-3 col-sm-12 col-md-3" style="margin-right: -12px">
 

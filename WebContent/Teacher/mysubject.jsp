@@ -1,5 +1,5 @@
 
-    <%
+<%
     
     if(session.getAttribute("user")==null)
     {
@@ -12,20 +12,21 @@
     	
     	
     %>
-    <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ page import="java.sql.*"%>
-     <%@ page import="databaseConnection.*" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ page import="java.sql.*"%>
+<%@ page import="databaseConnection.*"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="bootstrap/css/bootstrap.min.css" />
 </head>
 <body>
 
-<%
+	<%
 String teacher_id=null;
 
 Dbconnection dbcon=new Dbconnection();
@@ -45,36 +46,35 @@ String query_subject="select * from TBL_Subject_Teacher where TeacherId='"+teach
 ResultSet rs=statement_te.executeQuery(query_subject);
 
 %>
- <div class="container-fluid">
+	<div class="container-fluid">
 
- 
-  <table class="table  table-bordered table-responsive ">
-	<thead>
-	<tr class="info">
-	<td colspan="4">
-	<strong class=" active">You are Teaching the following subjects </strong>
-	</td>
-	</tr>
-	<tr class="default">
-	<th>Subject ID</th>
-	<th>Subject Name</th>
-	<th>Grade</th>
-	<th>Section</th>
-	</tr>
-	</thead>
-	<tbody>
-<%
+
+		<table class="table  table-bordered table-responsive ">
+			<thead>
+				<tr class="info">
+					<td colspan="4"><strong class=" active">You are
+							Teaching the following subjects </strong></td>
+				</tr>
+				<tr class="default">
+					<th>Subject ID</th>
+					<th>Subject Name</th>
+					<th>Grade</th>
+					<th>Section</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%
 if(!rs.isBeforeFirst())
 {
 %>
-<tr>
-<td colspan="4">
-<%
+				<tr>
+					<td colspan="4">
+						<%
 out.print("No subjects are assigned yet ");
 %>
-</td>
-</tr>
-<%
+					</td>
+				</tr>
+				<%
 }
 while(rs.next())	
 {
@@ -89,38 +89,39 @@ while(rs.next())
 		name=rs_name.getString(1);
 	}
 	%>
-	
-	
-	<tr>
-	<td class="text-capitalize"><small> <%=subject %></small></td>
-	<td class="text-capitalize"> <small><%=name %></small></td>
-	<td class="text-capitalize"> <small><%=Grade %></small></td>
-	<td class="text-capitalize"> <small><%=section %></small></td>
-	</tr>
-	<%
+
+
+				<tr>
+					<td class="text-capitalize"><small> <%=subject %></small></td>
+					<td class="text-capitalize"><small><%=name %></small></td>
+					<td class="text-capitalize"><small><%=Grade %></small></td>
+					<td class="text-capitalize"><small><%=section %></small></td>
+				</tr>
+				<%
 	
 }
 }
 else
 {
 %>
-<tr>
-<td>
-<h1>you are not teacher for any classes yet</h1></td>
-</tr>
-<%}} %>
-	</tbody>
-	<tfoot>
+				<tr>
+					<td>
+						<h1>you are not teacher for any classes yet</h1>
+					</td>
+				</tr>
+				<%}} %>
+			</tbody>
+			<tfoot>
 
-	 </tfoot>
-	
-	
-	</table>
-  </div>
+			</tfoot>
 
- 
 
-	
+		</table>
+	</div>
+
+
+
+
 
 </body>
 </html>

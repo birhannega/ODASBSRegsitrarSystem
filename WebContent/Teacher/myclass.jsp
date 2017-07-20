@@ -27,7 +27,7 @@
 
 </head>
 
-<body  style="background:#eff3f6;">
+<body style="background: #eff3f6;">
 	<div class="container-fluid">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
@@ -37,32 +37,32 @@
 
 			</div>
 		</div>
-<div class="container-fluid">
-		<div class="col-lg-3 col-sm-12 col-md-8 pull-leeft">
-			
-				
-<%@ include file="../includes/Tsidebar.jsp" %>
-			</div>
-			
-			
-			
-		
-
-		<div class="col-lg-7 col-sm-12 col-md-8">
-
-			<div class="text-info text-capitalize">
-				<h4>
-					hello teacher
-					<%out.println(session.getAttribute("user")); %>
-				</h4>
+		<div class="container-fluid">
+			<div class="col-lg-3 col-sm-12 col-md-8 pull-leeft">
 
 
-
+				<%@ include file="../includes/Tsidebar.jsp"%>
 			</div>
 
-</div>
-</div>
+
+
+
+
+			<div class="col-lg-7 col-sm-12 col-md-8">
+
+				<div class="text-info text-capitalize">
+					<h4>
+						hello teacher
+						<%out.println(session.getAttribute("user")); %>
+					</h4>
+
+
+
+				</div>
+
+			</div>
 		</div>
+	</div>
 
 	<div class="footor container col-lg-12 col-md-8 col-sm-12 col-xs-12">
 		<hr style="border: 1px solid brown">

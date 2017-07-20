@@ -1,3 +1,4 @@
+
 <%  
  if(session.getAttribute("registrar")==null)
  { 
@@ -18,32 +19,34 @@
 <head>
 <title>Teachers registration</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="../bootstrap/css/bootstrap.min.css" />
 </head>
 <body>
 	<div class="container-fluid">
 		<div class="row">
-	<%@include file="../includes/vector.jsp" %>
+			<%@include file="../includes/vector.jsp"%>
+		</div>
+		<div class="row" style="margin-top: -20px">
+			<%@ include file="../includes/nav.html"%>
+		</div>
 	</div>
-<div class="row" style="margin-top:-20px">
-	<%@ include file="../includes/nav.html" %>
-</div>
-</div>
-<div style="margin-left: 10px;margin-top: -4px" class="container-fluid">
+	<div style="margin-left: 10px; margin-top: -4px"
+		class="container-fluid">
 		<div class="col-lg-3 col-sm-4 col-md-3 col-sm-12">
-			<%@ include file="../includes/sidebar.jsp" %>
+			<%@ include file="../includes/sidebar.jsp"%>
 		</div>
 
-		<div class="col-lg-9 col-sm-8 col-md-9 col-sm-12 pull-right" >
-               
-             <%@ include file="TeacherRegistration.jsp" %>
+		<div class="col-lg-9 col-sm-8 col-md-9 col-sm-12 pull-right">
+
+			<%@ include file="TeacherRegistration.jsp"%>
 		</div>
 	</div>
 	<div class="footor container col-lg-12 col-md-8 col-sm-12 col-xs-12">
-		
-		<p class="text-info well well-sm ">This system is developed by volunteer
-			students graduated from Adama science and Technology University for
-			Oromiya Development Association</p>
+
+		<p class="text-info well well-sm ">This system is developed by
+			volunteer students graduated from Adama science and Technology
+			University for Oromiya Development Association</p>
 
 		<%
  }

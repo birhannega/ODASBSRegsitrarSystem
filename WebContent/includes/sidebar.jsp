@@ -11,7 +11,8 @@
 				</strong></a></li>
 
 			<li class="list-group-item"><a href="registerTeacher.jsp"><strong>
-						<span class="glyphicon glyphicon-align-justify"></span> Register Teacher
+						<span class="glyphicon glyphicon-align-justify"></span> Register
+						Teacher
 				</strong></a></li>
 			<li class="list-group-item"><a href="studeregistration.jsp"><strong>
 						<span class="glyphicon glyphicon-user"></span> Register Student
@@ -22,8 +23,8 @@
 				</strong></a></li>
 
 			<li class="list-group-item"><a href="enrol.jsp"><strong>
-						<span class="glyphicon glyphicon-random"> </span>
-						Subject-Teacher Assignment
+						<span class="glyphicon glyphicon-random"> </span> Subject-Teacher
+						Assignment
 				</strong></a></li>
 			<li class="list-group-item"><a href="EnrolTeacher.jsp"> <span
 					class="glyphicon glyphicon-transfer"></span> <strong>Home

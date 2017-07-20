@@ -6,7 +6,7 @@
 
 
 <div class="panel panel-info">
-	<div class="panel-heading"> New Subject registration form</div>
+	<div class="panel-heading">New Subject registration form</div>
 
 	<div class="panel-body">
 		<div class="panel-content">
@@ -86,16 +86,11 @@
 		<td><%=no%></td>
 		<td><%=res_list.getString("Grade")%></td>
 		<td>
-		
 			<%
 				Statement st_sub_list = con.createStatement();
 					ResultSet sbjects = st_sub_list.executeQuery("select Name from TBL_SUBJ where Grade='" + grade + "'");
 					while (sbjects.next()) {
-			%> 
-			
-			<%=sbjects.getString("name")%>
-			
-		 <%
+			%> <%=sbjects.getString("name")%> <%
  	}
  %>
 

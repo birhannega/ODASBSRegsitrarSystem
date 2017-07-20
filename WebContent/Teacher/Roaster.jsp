@@ -1,3 +1,4 @@
+
 <%if (session.getAttribute("user") == null)
 
 {
@@ -7,7 +8,7 @@ else {
 	String ActiveUser = session.getAttribute("user").toString();
 
  %>
- <%@ page import="java.util.ArrayList"%>
+<%@ page import="java.util.ArrayList"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -19,9 +20,11 @@ else {
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="../bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" href="../resources/css/print.css" media="print">
-<link rel="stylesheet" type="text/css" href="../bootstrap/font-awesome/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="../bootstrap/font-awesome/css/font-awesome.min.css" />
 <script type="text/javascript" src="../resources/js/jquery.js"></script>
 <script type="text/javascript" src="../resources/js/jquery.bdt.js"></script>
 <script type="text/javascript">
@@ -34,13 +37,14 @@ else {
 <style>
 .error {
 	color: red;
-	
 }
-.id{
-background: teal;
+
+.id {
+	background: teal;
 }
-header,footer{
-display: none;
+
+header, footer {
+	display: none;
 }
 </style>
 
@@ -49,7 +53,7 @@ display: none;
 <body>
 	<div class="container-fluid">
 
-         <div class="panel panel-primary">
+		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h3 class="text-left text-uppercase">ODA Special boarding
 					school student Record Management System</h3>
@@ -80,7 +84,8 @@ display: none;
 
 
 						<label for="semister">Semister</label> <select
-							class="form-control" name="semister" required="required" id="semister">
+							class="form-control" name="semister" required="required"
+							id="semister">
 							<option value="">choose semister</option>
 							<option value="I">First Semister</option>
 							<option value="II">Second Semister</option>
@@ -92,7 +97,7 @@ display: none;
 					<button type="submit" class="btn btn-success">Generate
 						Roaster</button>
 				</form>
-				<div >
+				<div>
 					<a href="Tindex.jsp"><span class="fa fa-arrow-left"></span><strong>
 							back to Menu</strong></a>
 				</div>
@@ -102,47 +107,51 @@ display: none;
 				if(semister==null||semister.trim().equals(""))
 						{
 					%>
-					<br>
-					<hr>
-					 <div class="container">
-					 <strong class="error">No semester choosen</strong>
-					 </div>
-					<%
+				<br>
+				<hr>
+				<div class="container">
+					<strong class="error">No semester choosen</strong>
+				</div>
+				<%
 						}
 				else
 				{
 				%>
-				<table class="table  table-responsive table-condensed table-bordered" id="mark">
-						<thead>
+				<table
+					class="table  table-responsive table-condensed table-bordered"
+					id="mark">
+					<thead>
 						<tr>
-						<th colspan="21" class="text-center"><strong> <span class="text-uppercase "> ODA Special Boarding school <strong></strong> branch Grade <%=grade+""+section%></span></strong></th>
+							<th colspan="21" class="text-center"><strong> <span
+									class="text-uppercase "> ODA Special Boarding school <strong></strong>
+										branch Grade <%=grade+""+section%></span></strong></th>
 						</tr>
-							<tr class="info">
-								<th>Student ID</th>
-								<th>Students' Name</th>
-								<th>Gender</th>
-								<th>Age</th>
-								<th>semister</th>
-								<th>Afan Oromo</th>
-								<th>Amharic</th>
-								<th>Biology</th>
-								<th>Chemistry</th>
-								<th>Chinese</th>
-								<th>Civics</th>
-								<th>Drawing</th>
-								<th>English</th>
-								<th>HPE</th>
-								<th>ICT</th>
-								<th>Maths</th>
-								<th>Physics</th>
-								<th>Total</th>
-								<th>Average</th>
-								<th>Rank</th>
-								<th>p?f</th>
-							</tr>
+						<tr class="info">
+							<th>Student ID</th>
+							<th>Students' Name</th>
+							<th>Gender</th>
+							<th>Age</th>
+							<th>semister</th>
+							<th>Afan Oromo</th>
+							<th>Amharic</th>
+							<th>Biology</th>
+							<th>Chemistry</th>
+							<th>Chinese</th>
+							<th>Civics</th>
+							<th>Drawing</th>
+							<th>English</th>
+							<th>HPE</th>
+							<th>ICT</th>
+							<th>Maths</th>
+							<th>Physics</th>
+							<th>Total</th>
+							<th>Average</th>
+							<th>Rank</th>
+							<th>p?f</th>
+						</tr>
 
-						</thead>
-						<tbody>
+					</thead>
+					<tbody>
 						<%if(semister.equals("I"))
 						{
 							String full_name=null,Firstname=null,lastname=null,gender=null; Date bdate=null; int age=0;
@@ -178,12 +187,12 @@ display: none;
 								} 
 						%>
 						<tr>
-						<td><%=rs_first.getString(1) %></td>
-						<td><%=full_name %></td>
-						<td><%=gender %></td>
-						<td><%=currentYear-birthdate %></td>
-						<td><%=semister %></td>
-						<%
+							<td><%=rs_first.getString(1) %></td>
+							<td><%=full_name %></td>
+							<td><%=gender %></td>
+							<td><%=currentYear-birthdate %></td>
+							<td><%=semister %></td>
+							<%
 						Statement st_sub=connection.createStatement();
 						float total=0,Average=0;
 						ResultSet rs_sub=st_sub.executeQuery("select Subject_id from TBL_SUBJ where Grade='"+grade+"'");
@@ -208,11 +217,11 @@ display: none;
 						
 						}
 						%>
-					
-						<td><%= total%></td>
-						<td><%= total/12%></td>
-						<td>
-						<%
+
+							<td><%= total%></td>
+							<td><%= total/12%></td>
+							<td>
+								<%
 						Statement statement2=connection.createStatement();
 						ResultSet rs_rank=statement2.executeQuery("select Rank from TBL_total_mark where Grade='"+grade+"' and semister='"+semister+"' and Stud_id='"+Student_id+"'");
 							if(rs_rank.next())
@@ -223,9 +232,10 @@ display: none;
 								out.print("---");
 							}
 						
-						%></td>
-						<td>
-							<%
+						%>
+							</td>
+							<td>
+								<%
 						Statement statement_pf=connection.createStatement();
 						ResultSet rs_pf=statement_pf.executeQuery("select [Pass_fail] from TBL_total_mark where Grade='"+grade+"' and semister='"+semister+"' and Stud_id='"+Student_id+"'");
 							if(rs_pf.next())
@@ -237,16 +247,16 @@ display: none;
 							}
 						
 						%>
-						
-						
-						</td>
+
+
+							</td>
 						</tr>
-						
+
 						<%
 					  }
 							%>
-			
-							<%
+
+						<%
 						}
 						
 						else if (semister.equals("II")){
@@ -285,12 +295,12 @@ display: none;
 								} 
 						%>
 						<tr>
-						<td><%=rs_first.getString(1) %></td>
-						<td><%=full_name %></td>
-						<td><%=gender %></td>
-						<td><%=currentYear-birthdate %></td>
-						<td><%=semister %></td>
-						<%
+							<td><%=rs_first.getString(1) %></td>
+							<td><%=full_name %></td>
+							<td><%=gender %></td>
+							<td><%=currentYear-birthdate %></td>
+							<td><%=semister %></td>
+							<%
 						float total=0,Average=0;
 						Statement st_sub=connection.createStatement();
 						ResultSet rs_sub=st_sub.executeQuery("select Subject_id from TBL_SUBJ where Grade='"+grade+"'");
@@ -310,10 +320,10 @@ display: none;
 						}
 						}
 						%>
-						<td><%=total %></td>
-						<td><%=total/12 %></td>
-						<td>
-						<%
+							<td><%=total %></td>
+							<td><%=total/12 %></td>
+							<td>
+								<%
 						Statement statement_ra=connection.createStatement();
 						ResultSet rs_ra=statement_ra.executeQuery("select Rank from TBL_total_mark where Grade='"+grade+"' and semister='"+semister+"' and Stud_id='"+Student_id+"'");
 							if(rs_ra.next())
@@ -325,9 +335,9 @@ display: none;
 							}
 						
 						%>
-						</td>
-						<td>
-							<%
+							</td>
+							<td>
+								<%
 						Statement statement_pf=connection.createStatement();
 						ResultSet rs_pf=statement_pf.executeQuery("select [Pass_fail] from TBL_total_mark where Grade='"+grade+"' and semister='"+semister+"' and Stud_id='"+Student_id+"'");
 							if(rs_pf.next())
@@ -339,7 +349,7 @@ display: none;
 							}
 						
 						%>
-						</td>
+							</td>
 						</tr>
 						<%
 							}
@@ -382,13 +392,13 @@ display: none;
 								} 
 						%>
 						<tr>
-						<td rowspan="3"><%=rs_first.getString(1) %></td>
-						<td rowspan="3"><%=full_name %></td>
-						<td rowspan="3"><%=gender %></td>
-						<td rowspan="3"><%=currentYear-birthdate %></td>
-						<td>First</td>
-						
-						<%
+							<td rowspan="3"><%=rs_first.getString(1) %></td>
+							<td rowspan="3"><%=full_name %></td>
+							<td rowspan="3"><%=gender %></td>
+							<td rowspan="3"><%=currentYear-birthdate %></td>
+							<td>First</td>
+
+							<%
 						float average=0,total=0;
 						String subjects=null;
 						Statement statement_first=connection.createStatement();
@@ -406,16 +416,16 @@ display: none;
 								total=total+sub_mark;
 								
 								%>
-								<td><%=mark %></td>
-								<% 
+							<td><%=mark %></td>
+							<% 
 							}
 						}
 						%>
-					
-						<td><%=total %></td>
-						<td><%=total/12 %></td>
-						<td>
-						<%
+
+							<td><%=total %></td>
+							<td><%=total/12 %></td>
+							<td>
+								<%
 						Statement statement_ra=connection.createStatement();
 						ResultSet rs_ra=statement_ra.executeQuery("select Rank from TBL_total_mark where Grade='"+grade+"' and semister='I' and Stud_id='"+Student_id+"'");
 							if(rs_ra.next())
@@ -427,10 +437,10 @@ display: none;
 							}
 						
 						%>
-						
-						</td>
-						<td>
-						<%
+
+							</td>
+							<td>
+								<%
 						Statement statement_pf=connection.createStatement();
 						ResultSet rs_pf=statement_ra.executeQuery("select Pass_Fail from TBL_total_mark where Grade='"+grade+"' and semister='I' and Stud_id='"+Student_id+"'");
 							if(rs_pf.next())
@@ -442,11 +452,11 @@ display: none;
 							}
 						
 						%>
-						
-						</td>
+
+							</td>
 						<tr>
-						<td>second</td>
-						<%
+							<td>second</td>
+							<%
 						String subject_id=null;float total_second=0;
 						Statement statement_second=connection.createStatement();
 						ResultSet list_second=statement_second.executeQuery("select Subject_id from TBL_SUBJ where Grade='"+grade+"' ");
@@ -463,15 +473,15 @@ display: none;
 								float sub_mark=Float.valueOf(mark);
 								total_second=total_second+sub_mark;
 								%>
-								<td><%=mark %></td>
-								<% 
+							<td><%=mark %></td>
+							<% 
 							}
 						}
 						%>
-						<td><%=total_second %></td>
-						<td><%=total_second/12 %></td>
-						<td>
-							<%
+							<td><%=total_second %></td>
+							<td><%=total_second/12 %></td>
+							<td>
+								<%
 						Statement statement_2nd_ra=connection.createStatement();
 						ResultSet rs__2nd_ra=statement_ra.executeQuery("select Rank from TBL_total_mark where Grade='"+grade+"' and semister='II' and Stud_id='"+Student_id+"'");
 							if(rs__2nd_ra.next())
@@ -483,10 +493,10 @@ display: none;
 							}
 						
 						%>
-						
-						</td>
-						<td>
-						<%
+
+							</td>
+							<td>
+								<%
 						Statement statement_2nd_pf=connection.createStatement();
 						ResultSet rs__2nd_pf=statement_ra.executeQuery("select Pass_fail from TBL_total_mark where Grade='"+grade+"' and semister='II' and Stud_id='"+Student_id+"'");
 							if(rs__2nd_pf.next())
@@ -498,13 +508,13 @@ display: none;
 							}
 						
 						%>
-						
-						</td>
+
+							</td>
 						</tr>
-						
+
 						<tr>
-						<td>Avergae</td>
-						<%
+							<td>Avergae</td>
+							<%
 						 float averagetotal=0;
 						Statement st_sub=connection.createStatement();
 				        ResultSet subject=st_sub.executeQuery("select Subject_id from TBL_SUBJ Where Grade='"+grade+"'");
@@ -542,11 +552,11 @@ display: none;
 							
 				        }
 						%>
-						<td><%= semisters_average%></td>
-						
-						
-					     
-				<%
+							<td><%= semisters_average%></td>
+
+
+
+							<%
 				
 				        }
 				        Statement Sta1st=connection.createStatement();
@@ -560,15 +570,12 @@ display: none;
 				        }
 				        
 				        %>
-				        
-				        <td>
-				      
-				      <%=averagetotal/2 %>
-				       
-				        </td>
-				        <td><%=(averagetotal/2)/12 %></td>
-				        
-				        <td><%
+
+							<td><%=averagetotal/2 %></td>
+							<td><%=(averagetotal/2)/12 %></td>
+
+							<td>
+								<%
 						String id=null;
 						int ava_rank=0;
 						
@@ -589,38 +596,44 @@ display: none;
 						ava_rank=1+ID_list.indexOf(Student_id);
 						
 							out.print(ava_rank);
-						%> 
-						 <%
+						%> <%
 						   float mark=0;
 						   ResultSet rs_average_rank=Sta1st.executeQuery("select * from TBL_policy"); 
 						   while(rs_average_rank.next()){
 							   mark= rs_average_rank.getFloat( "min_ave");
-							      }%><td>
-							     <%if(mark>=(averagetotal/2)/12 )
+							      }%>
+							
+							<td>
+								<%if(mark>=(averagetotal/2)/12 )
 								   { 
 									   out.print("pass");
 								   }
 								   else{out.print("faill");}
 							 %>
-							
-						</td>
-				        <%							}
+
+							</td>
+							<%							}
 						}
 				%>
 						
-							</tbody>
-							</table>
-							<div class="nopint col-lg-offset-10">
-			<button id="printpagebutton" type="button" class="btn btn-primary " onclick="printpage()"><span class="glyphicon glyphicon-print"> <strong>print  roaster</strong> </span></button>
+					</tbody>
+				</table>
+				<div class="nopint col-lg-offset-10">
+					<button id="printpagebutton" type="button" class="btn btn-primary "
+						onclick="printpage()">
+						<span class="glyphicon glyphicon-print"> <strong>print
+								roaster</strong>
+						</span>
+					</button>
+				</div>
 			</div>
-							</div>
-							<%} 
+			<%} 
 							}%>
-							</div>
-							</div>
-						
-							</body>
-							<script type="text/javascript">
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript">
 		function printpage() {
 		    //Get the print button and put it into a variable
 		    var printButton = document.getElementById("printpagebutton");
@@ -635,9 +648,8 @@ display: none;
 
 
 		</script>
-				<%
+<%
 				}
 		
 				%>
-							</html>
-						
+</html>

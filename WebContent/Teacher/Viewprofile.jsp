@@ -5,7 +5,7 @@
 <%@ page import="java.sql.*"%>
 <%@ page import="javax.servlet.*,java.text.*"%>
 <%@ page import="java.util.Date"%>
- <%@ page import="databaseConnection.*" %>
+<%@ page import="databaseConnection.*"%>
 
 <!DOCTYPE html>
 <html>
@@ -17,7 +17,7 @@
 </head>
 <body>
 
-<%
+	<%
 
 if(session.getAttribute("user")!=null)
 {
@@ -49,30 +49,30 @@ if(session.getAttribute("user")!=null)
    
 	}
 	%>
-	
-            <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-12">
-            <div class="panel panel-success">
-                <div class="panel-heading">
-                    <h4 class="text-center">User Profile<span class="glyphicon glyphicon-user pull-right"><img  src="<%=image%>"></span></h4>
-                </div>
-                <div class="panel-body text-center">
-                    <p class="lead">
-                        <strong><%=fname+" "+lname %></strong>
-                    </p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item liitem"><strong>Position:</strong>
-                        <span class="pull-right">Teacher</span>
-                    </li>
-                    <li class="list-group-item liitem"><strong>School:</strong>
-                        <span class="pull-right">ODASBS</span>
-                    </li>
-                    <li class="list-group-item liitem"><strong>Graduted in:</strong>
-                        <span class="pull-right"><%=major%></span>
-                    </li>
-                  
-                        <%
+
+	<div class="row">
+		<div class="col-sm-12 col-md-12 col-lg-12">
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<h4 class="text-center">
+						User Profile<span class="glyphicon glyphicon-user pull-right"><img
+							src="<%=image%>"></span>
+					</h4>
+				</div>
+				<div class="panel-body text-center">
+					<p class="lead">
+						<strong><%=fname+" "+lname %></strong>
+					</p>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item liitem"><strong>Position:</strong>
+						<span class="pull-right">Teacher</span></li>
+					<li class="list-group-item liitem"><strong>School:</strong> <span
+						class="pull-right">ODASBS</span></li>
+					<li class="list-group-item liitem"><strong>Graduted
+							in:</strong> <span class="pull-right"><%=major%></span></li>
+
+					<%
                         
                         SimpleDateFormat getyear=new SimpleDateFormat("y");
                         String birth_year=getyear.format(hdate);
@@ -144,21 +144,18 @@ if(session.getAttribute("user")!=null)
                     // out.print(serviceyear+" year "+servicemonth+" month "+serviceday+" days");
                         
                         %>
-                          <li class="list-group-item li-item">service Duration:
-                        <span class="pull-right"><small style="color:blue"><%=serviceyear+" years "+servicemonth+" months "+serviceday+" days"%></small>
-                        <br>
-                        </span>
-                    </li>
-                </ul>
-                <div class="panel-footer">
-                    
-                </div>
-                </div>
-            </div>
-        </div>
-	
+					<li class="list-group-item li-item">service Duration: <span
+						class="pull-right"><small style="color: blue"><%=serviceyear+" years "+servicemonth+" months "+serviceday+" days"%></small>
+							<br> </span>
+					</li>
+				</ul>
+				<div class="panel-footer"></div>
+			</div>
+		</div>
+	</div>
 
-	
+
+
 	<%
 	
 	//out.println(id);
@@ -176,6 +173,6 @@ out.println("id not found");
 %>
 
 
-	
+
 </body>
 </html>

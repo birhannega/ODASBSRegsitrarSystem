@@ -1,3 +1,4 @@
+
 <%if(session.getAttribute("registrar")==null) {
 	
 	response.sendRedirect("../index.jsp");
@@ -5,15 +6,15 @@
 else{%>
 
 
-    <%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
-<%@page import="java.util.Date" %>
+<%@page import="java.util.Date"%>
 <%@ page import="javax.servlet.*,java.text.*"%>
 <%@page import="databaseConnection.Dbconnection"%>
 <%Dbconnection dbcon=new Dbconnection();
 %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,25 +62,27 @@ while(rsfemaletotal.next()){
 	//out.println(female);
 }%>
 <div>
-<span>Table of students of ODASBS <%=branch%>      branch in <%=ademicyear %>  </span>
-<hr>
-	  <table id="table"class="table table-responsive table-bordered"><thead>
-<tr>
-<th>Grade</th>
-<th>Male</th>
-<th>Female</th>
-<th>Total</th>
+	<span>Table of students of ODASBS <%=branch%> branch in <%=ademicyear %>
+	</span>
+	<hr>
+	<table id="table" class="table table-responsive table-bordered">
+		<thead>
+			<tr>
+				<th>Grade</th>
+				<th>Male</th>
+				<th>Female</th>
+				<th>Total</th>
 
-</tr>
-<tr>
-<td>9</td>
-<td><%=male_9%></td>
-<td><%=female_9 %></td>
-<td><%=total_9 %></td>
+			</tr>
+			<tr>
+				<td>9</td>
+				<td><%=male_9%></td>
+				<td><%=female_9 %></td>
+				<td><%=total_9 %></td>
 
-</tr>
-<tr>
-<%
+			</tr>
+			<tr>
+				<%
 int total_10=0;
 int grade_10=0;
 Statement st_grade_10=dbcon.getConnection().createStatement();
@@ -99,13 +102,13 @@ while(rs_female_10.next()){
 }
 total_10=male_10+femal_10;
 %>
-<td>10</td>
-<td><%=male_10%></td>
-<td><%=femal_10%></td>
-<td><%=total_10%></td>
-</tr>
-<tr>
-<%
+				<td>10</td>
+				<td><%=male_10%></td>
+				<td><%=femal_10%></td>
+				<td><%=total_10%></td>
+			</tr>
+			<tr>
+				<%
 int male_11=0;
 Statement st_11=dbcon.getConnection().createStatement();
 ResultSet rs_11=st_11.executeQuery("select count(stud_id) from tbl_student where branch='"+branch+"'and Grade='11'and gender='male' and Status='Active'" );
@@ -118,14 +121,14 @@ while(rs_female_11.next()){
 	female_11=rs_female_11.getInt(1);
 	total_11=male_11+female_11;
 }%>
-<td>11</td>
-<td><%=male_11 %></td>
-<td><%=female_11 %></td>
-<td><%=total_11 %></td>
-</tr>
-<tr>
-<td>12</td>
-<%int male_12=0,female_12=0,total_12=0;
+				<td>11</td>
+				<td><%=male_11 %></td>
+				<td><%=female_11 %></td>
+				<td><%=total_11 %></td>
+			</tr>
+			<tr>
+				<td>12</td>
+				<%int male_12=0,female_12=0,total_12=0;
 Statement st_12=dbcon.getConnection().createStatement();
 ResultSet rs_12=st_12.executeQuery("select count(stud_id) from tbl_student where branch='"+branch+"'and gender='male'and grade='12'and Status='Active'");
 while(rs_12.next()){
@@ -140,21 +143,22 @@ while(rs_12_female.next()){
 	total_stud=total_9+total_10+total_11+total_12;
 }
 %>
-<td><%=male_12 %></td>
-<td><%=female_12 %></td>
-<td><%=total_12 %></td>
-</tr>
-<tr>
-<td>All</td>
-<td><%=total_m %></td>
-<td><%=total_f %></td>
-<td><%=total_stud %></td>
-</tr>
-</table>
-  		<div class="container-fluid">
-<input type="submit" onclick="printpage();" value="print this report"  id="printpagebutton"class="pull-right btn btn-primary"/> 
-</div>
-	
-<%} %>
+				<td><%=male_12 %></td>
+				<td><%=female_12 %></td>
+				<td><%=total_12 %></td>
+			</tr>
+			<tr>
+				<td>All</td>
+				<td><%=total_m %></td>
+				<td><%=total_f %></td>
+				<td><%=total_stud %></td>
+			</tr>
+	</table>
+	<div class="container-fluid">
+		<input type="submit" onclick="printpage();" value="print this report"
+			id="printpagebutton" class="pull-right btn btn-primary" />
+	</div>
+
+	<%} %>
 
 </html>

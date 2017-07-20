@@ -1,3 +1,4 @@
+
 <%  
  if(session.getAttribute("registrar")==null)
  {
@@ -27,8 +28,9 @@
 <link rel="stylesheet" type="text/css"
 	href="bootstrap/css/bootstrap.min.css" />
 </head>
-<body style="font-family: Trebuchet MS, sans-serif; background:#eff3f6;">
-<div class="container-fluid">
+<body
+	style="font-family: Trebuchet MS, sans-serif; background: #eff3f6;">
+	<div class="container-fluid">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 
@@ -38,21 +40,21 @@
 			</div>
 		</div>
 
-		<div class="col-lg-3 col-md-4 col-sm-12 ">	
-		<%@ include file="../includes/sidebar.jsp" %>			
-        </div>
-		
-		<div class=" col-md-6 col-lg-6 col-md-8">
-		<%@ include file="SectionAssignment.jsp"  %>
+		<div class="col-lg-3 col-md-4 col-sm-12 ">
+			<%@ include file="../includes/sidebar.jsp"%>
 		</div>
-		
-		
-</div>
+
+		<div class=" col-md-6 col-lg-6 col-md-8">
+			<%@ include file="SectionAssignment.jsp"%>
+		</div>
+
+
+	</div>
 	<div class="footor container col-lg-12 col-md-8 col-sm-12 col-xs-12">
-		
-		<p class="text-info well well-sm ">This system is developed by volunteer
-			students graduated from Adama science and Technology University for
-			Oromiya Development Association</p>
+
+		<p class="text-info well well-sm ">This system is developed by
+			volunteer students graduated from Adama science and Technology
+			University for Oromiya Development Association</p>
 
 		<%
 		

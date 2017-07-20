@@ -42,7 +42,7 @@ public class Edit_t_profile extends HttpServlet {
 			}
 			
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
+		
 			e.printStackTrace();
 		} 
      

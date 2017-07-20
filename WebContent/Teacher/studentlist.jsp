@@ -3,7 +3,7 @@
 <%@ page import="java.sql.*"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@ page import="java.util.Date"%>
-<%@ page import="databaseConnection.Dbconnection" %>
+<%@ page import="databaseConnection.Dbconnection"%>
 
 <% 
   
@@ -18,13 +18,13 @@ Dbconnection studListdbcon=new Dbconnection();
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="../bootstrap/css/bootstrap.min.css" />
 <style type="text/css" title="currentStyle">
 @import "../resources/css/demo_table.css";
 </style>
-<script type="text/javascript"  src="../resources/js/jquery.js"></script>
-<script type="text/javascript"
-	src="../resources/js/jquery.bdt.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.bdt.js"></script>
 
 <%
 String teacherid,room=null,grade=null,section=null;
@@ -54,7 +54,7 @@ while(rstid.next())
 %>
 <title>Students List</title>
 </head>
-<body style="background:white">
+<body style="background: white">
 	<div class="container-fluid">
 		<%
 
@@ -66,20 +66,20 @@ String qury="Select * from TBL_student where Grade='"+grade+"' and Section_id='"
 
 %>
 
-		<table class="table table-bordered col-md-12 table-responsive"  style="background-color:white" id="studlist">
+		<table class="table table-bordered col-md-12 table-responsive"
+			style="background-color: white" id="studlist">
 			<thead>
-			<tr class="active">
-			<td colspan="5"><strong>Students list of Grade
-				<%out.print(room); %></strong></td>
-			</tr>
+				<tr class="active">
+					<td colspan="5"><strong>Students list of Grade <%out.print(room); %></strong></td>
+				</tr>
 				<tr class="info">
 					<th>ID number</th>
 					<th>Full Name</th>
-					
+
 					<th>Age</th>
 					<th>Address</th>
-				
-					
+
+
 
 
 				</tr>
@@ -98,13 +98,11 @@ while(rsList.next())
 %>
 
 			<tr>
-			<td width="10%">
+				<td width="10%">
 					<%out.println(id); %>
 				</td>
-				<td width="10%">
-					<%=fname+" "+lname%>
-				</td>
-				
+				<td width="10%"><%=fname+" "+lname%></td>
+
 				<td width="10%">
 					<%
 					
@@ -125,12 +123,12 @@ while(rsList.next())
 				<td width="10%">
 					<%out.println(address); %>
 				</td>
-				
-				
+
+
 			</tr>
-<%} %>
+			<%} %>
 		</table>
-		
+
 
 
 		<script type="text/javascript">
@@ -139,23 +137,24 @@ $(document).ready(function() {
 });
 
 </script>
-</div>
+	</div>
 
-	
+
 </body>
-			<%
+<%
 
 
 }
 else
 {
 	%>
-	
-	<h4 class="text-warning">Since you are not assigned as home room teacher, list of students is not available</h4>	
 
-	
-	
-	<%
+<h4 class="text-warning">Since you are not assigned as home room
+	teacher, list of students is not available</h4>
+
+
+
+<%
 
 }
 }

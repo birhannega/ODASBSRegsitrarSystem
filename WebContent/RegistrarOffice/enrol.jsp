@@ -1,3 +1,4 @@
+
 <%  
  if(session.getAttribute("registrar")==null)
  {
@@ -20,7 +21,7 @@
 <html lang="en">
 <head>
 
-<title>Enrollments </title>
+<title>Enrollments</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css"
 	href="../bootstrap/css/bootstrap.min.css" />
@@ -28,25 +29,25 @@
 </head>
 
 <body>
-	<div class="container-fluid" >
+	<div class="container-fluid">
 		<div class="row">
-			<%@ include file="../includes/vector.jsp" %>
-			</div>
-			<div  style="margin: -20px -25px -2px -30px ">
-			<%@ include file="../includes/nav.html" %>
-			</div>
-		
+			<%@ include file="../includes/vector.jsp"%>
+		</div>
+		<div style="margin: -20px -25px -2px -30px">
+			<%@ include file="../includes/nav.html"%>
+		</div>
+
 		<div class="col-lg-3 col-sm-12 col-md-3">
-				<%@ include file="../includes/sidebar.jsp" %>
-			</div>
-			
-			<!-- //////////////////
+			<%@ include file="../includes/sidebar.jsp"%>
+		</div>
+
+		<!-- //////////////////
 			
 			choose form
 			
 			////////////////////// -->
-			<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 clearfix">
-	<!-- 		<div class="form-group">
+		<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 clearfix">
+			<!-- 		<div class="form-group">
 		<form class="form-inline pull-right" action="" method="post">
   <div class="form-group">
 
@@ -63,9 +64,9 @@
   <button type="submit" class="btn btn-primary">choose Action</button>
 </form>
 </div> -->
-</div>
-			<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-		<%-- 	<%
+		</div>
+		<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+			<%-- 	<%
 			String action=request.getParameter("action");
 			if(action==null||action.trim()=="")
 			{
@@ -80,19 +81,19 @@
 			else  if(action.equalsIgnoreCase("hrm"))
 			{
 			%> --%>
-					<%@include file="Teacher_subject.jsp" %>	
-			
-			</div>
-			
-		
-			
-	
+			<%@include file="Teacher_subject.jsp"%>
+
+		</div>
+
+
+
+
 	</div>
 	<div class="footor container col-lg-12 col-md-8 col-sm-12 col-xs-12">
-		<p class="text-info well well-sm ">This system is developed by volunteer
-			students graduated from Adama science and Technology University for
-			Oromiya Development Association</p>
-<%
+		<p class="text-info well well-sm ">This system is developed by
+			volunteer students graduated from Adama science and Technology
+			University for Oromiya Development Association</p>
+		<%
  }
 Date date=new Date(); 
 SimpleDateFormat sdf=new SimpleDateFormat("YYYY");

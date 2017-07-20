@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	<%@ page import="java.util.Date"%>
+<%@ page import="java.util.Date"%>
 <%@ page import="javax.servlet.*,java.text.*"%>
 <!DOCTYPE html>
 <html>
@@ -29,12 +29,12 @@
 			<%@ include file="withdraw.jsp"%>
 		</div>
 	</div>
-	
+
 	<div class="footor container col-lg-12 col-md-8 col-sm-12 col-xs-12">
-		
-		<p class="text-info well well-sm ">This system is developed by volunteer
-			students graduated from Adama science and Technology University for
-			Oromiya Development Association</p>
+
+		<p class="text-info well well-sm ">This system is developed by
+			volunteer students graduated from Adama science and Technology
+			University for Oromiya Development Association</p>
 
 		<%
  

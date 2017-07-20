@@ -63,7 +63,7 @@
 				<div class="col-lg-4 "
 					style="background-color: teal; border-radius: 6px; color: white">
 					<h1 class="text-center">
-					<%
+						<%
 					Statement studentcount=dbconnection.getConnection().createStatement();
 					ResultSet rs_studentcount=studentcount.executeQuery("Select count(stud_id) from TBL_student where Status='active' and branch='"+branch+"'");
 					if(rs_studentcount.next())
@@ -72,7 +72,7 @@
 					}
 					
 					%>
-					
+
 					</h1>
 					<p class="text-capitalize text-center">Students Learning</p>
 
@@ -81,7 +81,7 @@
 				<div class="col-lg-4 "
 					style="background-color: #F7F7F9; border-radius: 6px;">
 					<h1 class="text-center text-info">
-					<%
+						<%
 					Statement teachercount=dbconnection.getConnection().createStatement();
 					ResultSet rs_teachertcount=teachercount.executeQuery("Select count(TeacherId) from TBL_teacher where Status='active' and branch='"+branch+"'");
 					if(rs_teachertcount.next())
@@ -90,19 +90,33 @@
 					}
 					
 					%>
-					
+
 					</h1>
 					<p class="text-capitalize text-center">Teachers Teaching</p>
 
 				</div>
 				<div class="col-lg-4 "
 					style="background-color: #337AB7; border-radius: 6px; color: white">
-					<h1 class="text-center">200</h1>
+					<h1 class="text-center">
+					<%
+					
+					Statement coursecount=dbconnection.getConnection().createStatement();
+					ResultSet rs_course=coursecount.executeQuery("select count(distinct name) from TBL_SUBJ");
+					if(rs_course.next())
+					{
+						out.print(rs_course.getString(1));
+					
+					%>
+					
+					</h1>
 					<p class="text-capitalize text-center">Active Courses</p>
+					<%}else{
+						out.println("no courses added so far");
+					} %>
 				</div>
-				
-				<hr style="border:2px solid brown">
-				
+
+				<hr style="border: 2px solid brown">
+
 			</div>
 		</div>
 

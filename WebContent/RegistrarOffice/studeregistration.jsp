@@ -20,31 +20,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<style type="text/css">
+.error{
+color:red
+}
+</style>
 <title>student-registration</title>
 <link rel="icon" href="resources/images/Sorting icons.psd">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css" />
+
 
 </head>
 
 <body>
 
-	<div class="container-fluid" >
-		<div  style="margin-left: -10px">
-	<%@include file="../includes/vector.jsp" %>
-	</div>
-<div class="container-fluid" style="margin-top:-15px;margin-left: -25px;">
-	<%@ include file="../includes/nav.html" %>
-</div>
+	<div class="container-fluid">
+		<div style="margin-left: -10px">
+			<%@include file="../includes/vector.jsp"%>
+		</div>
+		<div class="container-fluid"
+			style="margin-top: -15px; margin-left: -25px;">
+			<%@ include file="../includes/nav.html"%>
+		</div>
 
-		<div class="col-lg-3 col-sm-4 col-md-3" >
+		<div class="col-lg-3 col-sm-4 col-md-3">
 			<%@ include file="../includes/sidebar.jsp"%>
 		</div>
 
 		<div class="col-sm-8 col-md-9 col-lg-9 pull-right"
 			style="margin-left: -30px">
-			
+
 			<form role="form" class="form-inline pull-right" method="get"
 				action="">
 				<div class="form-group">
@@ -65,16 +70,17 @@
 					<input type="submit" value="GO!" class="btn btn-primary" />
 				</div>
 			</form>
-			</div>
-				<div class="col-sm-8 col-md-9 col-lg-9 pull-right" style="margin-top: 10px">
+		</div>
+		<div class="col-sm-8 col-md-9 col-lg-9 pull-right"
+			style="margin-top: 10px">
 			<%
 			String choosenGrade=request.getParameter("grade");
 			if(choosenGrade==""||choosenGrade==null)
 			{
 				%>
-				<div class="container-fluid">
+			<div class="container-fluid">
 				<%@ include file="StudentRegistration.jsp"%></div>
-				<%
+			<%
 				}
 			else if(choosenGrade.equals("9"))
 			{
@@ -91,33 +97,36 @@
 			else if(choosenGrade.equals("11"))
 			{
 				%>
-				<%@ include file="GradeElevenReg.jsp"%>
-				<%
+			<%@ include file="GradeElevenReg.jsp"%>
+			<%
 			}
 			else if(choosenGrade.equals("12"))
 			{
 				%>
-				<%@ include file="GradeTweReg.jsp"%>
-				<%
+			<%@ include file="GradeTweReg.jsp"%>
+			<%
 			}
 			else
 			{
 				%>
-				<h4>Grade not specified</h4>
-				<%
+			<h4>Grade not specified</h4>
+			<%
 			}
 			%>
 
-			
-			
+
+
 
 
 
 		</div>
 
-<script src="../external/jquery/jquery.js"></script>
-<script src="jquery-ui.js"></script>
-
+		<script src="../external/jquery/jquery.js"></script>
+		<script src="jquery-ui.js"></script>
+<script type="text/javascript"
+	src="../resources/jquery/jquery-1.11.1.js"></script>
+<script type="text/javascript"
+	src="../resources/jquery/jquery.validate.js"></script>
 
 
 		<div class="footor container col-lg-12 col-md-8 col-sm-12 col-xs-12">

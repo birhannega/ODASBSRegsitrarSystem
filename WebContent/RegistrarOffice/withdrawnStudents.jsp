@@ -1,3 +1,4 @@
+
 <%if(session.getAttribute("Registrar")==null)
 {
 	response.sendRedirect("../index.jsp");
@@ -6,13 +7,13 @@ else
 {
 	%>
 <div>
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="java.sql.*"%>
-<%@page import="java.util.Date" %>
-<%@page import="databaseConnection.Dbconnection"%>
+	<%@page import="java.text.SimpleDateFormat"%>
+	<%@page import="java.sql.*"%>
+	<%@page import="java.util.Date"%>
+	<%@page import="databaseConnection.Dbconnection"%>
 
-<p>List of withdrawn Students </p>
-<%
+	<p>List of withdrawn Students</p>
+	<%
 Date curdate=new Date();
 String branch=null;
 SimpleDateFormat dateFormat=new SimpleDateFormat("Y");
@@ -27,20 +28,20 @@ if(res_branch.next())
 
 ResultSet withResultSet=withdrawn.executeQuery("select * from TBL_student where Status='withdraw' and Branch='"+branch+"' and AcademicYear='"+year+"'");
 %>
-<table>
+	<table>
 
-<%
+		<%
 while(withResultSet.next())
 {
 	%>
 
-	<tr>
-	<td><%=withResultSet.getString(1) %></td>
-		<td><%=withResultSet.getString(1) %></td>
-	
-	</tr>
-	
-	<%
+		<tr>
+			<td><%=withResultSet.getString(1) %></td>
+			<td><%=withResultSet.getString(1) %></td>
+
+		</tr>
+
+		<%
 	}
 }else
 {
@@ -49,5 +50,5 @@ while(withResultSet.next())
 }
 %>
 
-</table>
+	</table>
 </div>

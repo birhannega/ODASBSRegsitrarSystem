@@ -95,7 +95,6 @@ public int EditStudProfile(String FirstName,String middlename,String lastname,St
 		ps_update.setString(15, id);
 		checker=ps_update.executeUpdate();
 	} catch (SQLException e) {
-		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
 	return checker;

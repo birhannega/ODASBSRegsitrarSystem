@@ -28,30 +28,30 @@
 	href="../bootstrap/font-awesome/css/font-awesome.min.css" />
 </head>
 
-<body >
+<body>
 	<div class="container-fluid">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 
-				<h3 class="text-left">ODA Special boarding school student Record
-					Management System</h3>
+				<h3 class="text-left">ODA Special boarding school student
+					Record Management System</h3>
 
 			</div>
 		</div>
 
 		<div class="col-lg-3 col-sm-4 col-md-3" style="margin-right: -12px">
-			
 
-			<%@ include file="../includes/Tsidebar.jsp" %>
-			
-			
+
+			<%@ include file="../includes/Tsidebar.jsp"%>
+
+
 		</div>
 
 		<div class="col-lg-9 col-sm-7 col-md-9" style="margin-left: -15px">
 
-			
-				
-				<%@ include file="studentlist.jsp" %>
+
+
+			<%@ include file="studentlist.jsp"%>
 		</div>
 	</div>
 	<div class="footor container col-lg-12 col-md-8 col-sm-12 col-xs-12">

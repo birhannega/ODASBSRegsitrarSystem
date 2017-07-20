@@ -1,13 +1,13 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.time.Year"%>
 <%@ page import="java.sql.*"%>
-    <%@ page import="java.util.Date" %>
-      <%@ page import="databaseConnection.Dbconnection" %>
+<%@ page import="java.util.Date"%>
+<%@ page import="databaseConnection.Dbconnection"%>
 <%@page import="model.Homeroom_List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    
-    <% if(session.getAttribute("registrar")==null) 
+	pageEncoding="ISO-8859-1"%>
+
+<% if(session.getAttribute("registrar")==null) 
     {
     	
     	response.sendRedirect("../index.jsp");
@@ -24,9 +24,9 @@
     	}
     
     %>
-    
-      
-      
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,19 +39,27 @@
 
 
 <body>
- 
-   <span class="col-lg-offset-2 col-sm-12 col-xs-12 text-center text-info"><strong> Home room Teacher Assignment form </strong></span><br>
 
-     <div class="panel-body">
-     
-  
-   
-    <form class="form-group " action="${pageContext.request.contextPath}/HomeRoomAssignment" method="post">
-    
-    	<div class="clearfix"> <strong> <span style="color:red"> ${hralreadyassigned} ${Tidexists}</span > <span style="color:green">${hrsuccess}</span> 
-      ${failed} </strong> </div>
-    			
-    			<%
+	<span class="col-lg-offset-2 col-sm-12 col-xs-12 text-center text-info"><strong>
+			Home room Teacher Assignment form </strong></span>
+	<br>
+
+	<div class="panel-body">
+
+
+
+		<form class="form-group "
+			action="${pageContext.request.contextPath}/HomeRoomAssignment"
+			method="post">
+
+			<div class="clearfix">
+				<strong> <span style="color: red">
+						${hralreadyassigned} ${Tidexists}</span> <span style="color: green">${hrsuccess}</span>
+					${failed}
+				</strong>
+			</div>
+
+			<%
     			request.getSession().setAttribute("hralreadyassigned", null);
     			request.getSession().setAttribute("hrsuccess", null);
     			request.getSession().setAttribute("Tidexists", null);
@@ -59,14 +67,12 @@
 
     			
     			%>
-   
-  <div class="form-group col-lg-3 col-md-3 ">
-    <label for="techerid">Teacher</label>
-    
-    
-    <select class="form-control" name="teacherid" required="required">
-    <option value="">Teacher ID</option>
-    <%
+
+			<div class="form-group col-lg-3 col-md-3 ">
+				<label for="techerid">Teacher</label> <select class="form-control"
+					name="teacherid" required="required">
+					<option value="">Teacher ID</option>
+					<%
     Dbconnection dbconn=new Dbconnection();
     		Connection con=dbconn.getConnection();
     		Statement statement_T=con.createStatement();
@@ -79,21 +85,21 @@
     			String lname=rs.getString("LastName");
     			String Full_name=name+" "+lname;
     			%>
-    			
-    			<option><%=id %></option>
-    		<%
+
+					<option><%=id %></option>
+					<%
    	}
     %>
-    
-    </select>
-    
-   
-  </div>
-  <div class="form-group col-lg-3 col-md-3">
-    <label for="grade">Grade</label>
-    <select class="form-control" name="grade" required="required">
-   <option value="">select Grade</option>
-   <%
+
+				</select>
+
+
+			</div>
+			<div class="form-group col-lg-3 col-md-3">
+				<label for="grade">Grade</label> <select class="form-control"
+					name="grade" required="required">
+					<option value="">select Grade</option>
+					<%
    
 
 	ResultSet rs_grade=statement.executeQuery("select Grade from TBL_grade");
@@ -104,21 +110,23 @@
 		//String section=rs_grade.getString("Section_Id");
 		
 				%>
-		
-		<option> <%=grade %> </option>
-<%
+
+					<option>
+						<%=grade %>
+					</option>
+					<%
 }
 %>
 
-</select>
-  
-  </div>
-  
-  <div class="form-group col-lg-3 col-md-3">
-    <label for="section">Section</label>
-    <select class="form-control" name="section" required="required">
-   <option value="">---select section</option>
-   <%
+				</select>
+
+			</div>
+
+			<div class="form-group col-lg-3 col-md-3">
+				<label for="section">Section</label> <select class="form-control"
+					name="section" required="required">
+					<option value="">---select section</option>
+					<%
 	ResultSet rs_sect=statement.executeQuery("select distinct Section_id from section");
 	
 	while(rs_sect.next())
@@ -127,30 +135,33 @@
 	String section=rs_sect.getString("Section_id");
 		
 				%>
-		
-		<option> <%=section %> </option>
-<%
+
+					<option>
+						<%=section %>
+					</option>
+					<%
 }
 
 %>
 
-</select>
-  </div>  
-  <input type="hidden" name="branch" value="<%=branch%>">
-  <br><button type="submit" class="btn  btn-info">Assign home room</button>
-</form>
-    
-</div>
- <div class="container-fluid">
- <table class="table table-bordered table-condensed table-striped">
- <thead><tr>
- <th>Teacher ID</th>
+				</select>
+			</div>
+			<input type="hidden" name="branch" value="<%=branch%>"> <br>
+			<button type="submit" class="btn  btn-info">Assign home room</button>
+		</form>
 
-   <th>Home room</th>
- </tr>
- </thead>
- <tbody>
-<%--  <%
+	</div>
+	<div class="container-fluid">
+		<table class="table table-bordered table-condensed table-striped">
+			<thead>
+				<tr>
+					<th>Teacher ID</th>
+
+					<th>Home room</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%--  <%
 
  String TeacherID=null,fname=null,lastname=null,grade=null,section=null;
  Homeroom_List hrm=new Homeroom_List();
@@ -170,7 +181,7 @@ if(actionperformed)
 	 <%
 }
 %> --%>
-<%
+				<%
 //list currently assigned teachers///
 
 
@@ -186,23 +197,23 @@ while(resultSet2.next())
 	section=resultSet2.getString("Section_id");
 	grade=resultSet2.getString("Grade");
 %>
-	<tr>
-	<td><%=TeacherID %></td>
-	<td><%=grade.concat(section) %></td>
-	</tr>
-<%
+				<tr>
+					<td><%=TeacherID %></td>
+					<td><%=grade.concat(section) %></td>
+				</tr>
+				<%
 }
 
 	
 
 %>
 
- 
- 
- </tbody>
- </table>
- 
- </div> 
+
+
+			</tbody>
+		</table>
+
+	</div>
 
 
 </body>

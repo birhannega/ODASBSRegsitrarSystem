@@ -44,77 +44,79 @@ body {
 		<div class=" col-xs-offset-2 col-md-6 col-lg-offset-2 pull-left "
 			style="margin-top: 5px">
 			<div class="row">
-			<div class="panel panel-default ">
-				<div class="alert-success panel-heading  text-center">
-					<h5 class="text-info">
-						<strong>Administrator Login Panel</strong>
-					</h5>
-
-				</div>
-
-				<div class="panel-body">
-					<div class="panel-content">
-
-						<form action="${pageContext.request.contextPath}/LoginAuthenicate"
-							method="post" id="loginform" class="form-group col-lg-10">
-
-							<h4 style="color: red" style="color:red">${error}</h4>
-						
-							
-
-
-							<div class="form-group col-lg-offset-2">
-								<div class="input-group">
-									<span class="input-group-addon "> <span
-										class="fa fa-user fa-lg"> </span></span> <input
-										title="Enter your User name" class="form-control" type="text"
-										id="user" name="user" placeholder="Enter your user name">
-								</div>
-							</div>
-
-							<div class="form-group  col-lg-offset-2">
-								<div class="input-group">
-									<span class="input-group-addon "><span
-										class="fa fa-key fa-lg pull-right"> </span></span> <input
-										class="form-control" type="password" name="password"
-										id="password" placeholder="enter your password"
-										title="enter your password">
-
-								</div>
-
-							</div>
-							<div class="form-group pagination-centered pull-right">
-								<div class="input-group">
-									<button data-placement="left" title="Click Here to reset Input"
-										id="reset" name="Login" style="margin-right: 6px;"
-										class="btn btn-danger pull-left " type="reset">
-										<i class="fa fa-trash"></i> Reset input
-									</button>
-
-									<button data-toggle="tooltip" title="This is Sign In button"
-										id="signin" name="Login" class="btn  btn-primary pull-right"
-										type="submit">
-										<i class=" fa fa-sign-in"></i> Sign in
-									</button>
-								</div>
-
-
-							</div>
-						</form>
+				<div class="panel panel-default ">
+					<div class="alert-success panel-heading  text-center">
+						<h5 class="text-info">
+							<strong>Administrator Login Panel</strong>
+						</h5>
 
 					</div>
+
+					<div class="panel-body">
+						<div class="panel-content">
+
+							<form
+								action="${pageContext.request.contextPath}/LoginAuthenicate"
+								method="post" id="loginform" class="form-group col-lg-10">
+
+								<h4 style="color: red" style="color:red">${error}</h4>
+
+
+
+
+								<div class="form-group col-lg-offset-2">
+									<div class="input-group">
+										<span class="input-group-addon "> <span
+											class="fa fa-user fa-lg"> </span></span> <input
+											title="Enter your User name" class="form-control" type="text"
+											id="user" name="user" placeholder="Enter your user name">
+									</div>
+								</div>
+
+								<div class="form-group  col-lg-offset-2">
+									<div class="input-group">
+										<span class="input-group-addon "><span
+											class="fa fa-key fa-lg pull-right"> </span></span> <input
+											class="form-control" type="password" name="password"
+											id="password" placeholder="enter your password"
+											title="enter your password">
+
+									</div>
+
+								</div>
+								<div class="form-group pagination-centered pull-right">
+									<div class="input-group">
+										<button data-placement="left"
+											title="Click Here to reset Input" id="reset" name="Login"
+											style="margin-right: 6px;" class="btn btn-danger pull-left "
+											type="reset">
+											<i class="fa fa-trash"></i> Reset input
+										</button>
+
+										<button data-toggle="tooltip" title="This is Sign In button"
+											id="signin" name="Login" class="btn  btn-primary pull-right"
+											type="submit">
+											<i class=" fa fa-sign-in"></i> Sign in
+										</button>
+									</div>
+
+
+								</div>
+							</form>
+
+						</div>
+					</div>
 				</div>
-             </div>
 			</div>
 		</div>
 	</div>
 
 
-<div class=" container">
-		
-		<p class="text-info well well-sm ">This system is developed by volunteer
-			students graduated from Adama science and Technology University for
-			Oromiya Development Association</p>
+	<div class=" container">
+
+		<p class="text-info well well-sm ">This system is developed by
+			volunteer students graduated from Adama science and Technology
+			University for Oromiya Development Association</p>
 
 		<%
  

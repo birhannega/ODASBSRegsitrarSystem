@@ -2,12 +2,12 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
-<%@ page import="java.util.Date" %>
+<%@ page import="java.util.Date"%>
 <%@page import="databaseConnection.Dbconnection"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-   
-    <%
+	pageEncoding="ISO-8859-1"%>
+
+<%
     if(session.getAttribute("registrar")==null)
     {
     	response.sendRedirect("../index.jsp");
@@ -15,7 +15,7 @@
     else
     {
     %>
-    
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,87 +23,101 @@
 
 <title>Scale management</title>
 <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-<link rel="stylesheet" type="text/css" href="../bootstrap/font-awesome/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="../bootstrap/font-awesome/css/font-awesome.min.css" />
 </head>
 <body>
-<div class="container-fluid">
-<div class="row">
-<%@ include file="../includes/vector.jsp" %>
-</div>
-</div>
+	<div class="container-fluid">
+		<div class="row">
+			<%@ include file="../includes/vector.jsp"%>
+		</div>
+	</div>
 
-<div class="container-fluid" style="margin-top: -18px">
-<div class="row">
-<%@ include file="../includes/nav.html" %>
-</div>
+	<div class="container-fluid" style="margin-top: -18px">
+		<div class="row">
+			<%@ include file="../includes/nav.html"%>
+		</div>
 
-<div class="container-fluid" >
-<div class="row">
-<div class="col-lg-3 col-md-3 col-xm-12 col-sm-12" style="margin-top: -10px">
-<%@ include file="../includes/sidebar.jsp" %>
-</div>
-
-
-
-<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 " style="margin-top: -10px">
-<div  class="panel ">
-<div class="panel-heading text-right">  <strong>  <span class="fa fa-edit"></span> Pass fail Scale update form</strong> </div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-3 col-md-3 col-xm-12 col-sm-12"
+					style="margin-top: -10px">
+					<%@ include file="../includes/sidebar.jsp"%>
+				</div>
 
 
 
-</div>
-<div class="col-lg-7">
+				<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 "
+					style="margin-top: -10px">
+					<div class="panel ">
+						<div class="panel-heading text-right">
+							<strong> <span class="fa fa-edit"></span> Pass fail
+								Scale update form
+							</strong>
+						</div>
 
-  
-  ${updated }
-  
-  
-  <%
+
+
+					</div>
+					<div class="col-lg-7">
+
+
+						${updated }
+
+
+						<%
   request.getSession().setAttribute("updated", null);
   %>
-    <form class="form-inline" method="post" action="${pageContext.request.contextPath}/UpdatePolicy">
-  <div class="form-group pull-left">
-    <label class="sr-only" for="Grade">choose Grade</label>
-    <div class="input-group">
-      <div class="input-group-addon">Select Grade</div>
-      <select class="form-control" name="Grade" id="Grade" required="required">
-      <option value="">choose Grade</option>
-      <%
+						<form class="form-inline" method="post"
+							action="${pageContext.request.contextPath}/UpdatePolicy">
+							<div class="form-group pull-left">
+								<label class="sr-only" for="Grade">choose Grade</label>
+								<div class="input-group">
+									<div class="input-group-addon">Select Grade</div>
+									<select class="form-control" name="Grade" id="Grade"
+										required="required">
+										<option value="">choose Grade</option>
+										<%
       for(int i=9;i<=12;i++)
       {
     	  %>
-    	  <option><%=i %></option>
-    	  <%
+										<option><%=i %></option>
+										<%
       }
       %>
-      </select>
-    
-    </div>
-  </div>
-   <div class="form-group col-md-5 ">
-    <label class="sr-only" for="scale">choose Grade</label>
-    <div class="input-group">
-      <div class="input-group-addon">Minimum Marks</div>
-      <input type="number" step="0.001" class="form-control" name="mark" id="scale" placeholder="Ente the minimum mark" required="required">
-    
-    </div>
-  </div>
-  <div class="form-group pull-right">
-  <button type="submit" class="btn btn-primary pull-right">Update policy</button></div>
-</form>
+									</select>
 
-</div>
-<br><br>
-  <div class="panel-body">
-  <table class="table table-bordered">
-  <thead>
-  <tr>
-  <th>No.</th>
-    <th>Grade</th>
-      <th>Scale</th>
-  </tr>
-  </thead>
-  <%
+								</div>
+							</div>
+							<div class="form-group col-md-5 ">
+								<label class="sr-only" for="scale">choose Grade</label>
+								<div class="input-group">
+									<div class="input-group-addon">Minimum Marks</div>
+									<input type="number" step="0.001" class="form-control"
+										name="mark" id="scale" placeholder="Ente the minimum mark"
+										required="required">
+
+								</div>
+							</div>
+							<div class="form-group pull-right">
+								<button type="submit" class="btn btn-primary pull-right">Update
+									policy</button>
+							</div>
+						</form>
+
+					</div>
+					<br>
+					<br>
+					<div class="panel-body">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>No.</th>
+									<th>Grade</th>
+									<th>Scale</th>
+								</tr>
+							</thead>
+							<%
   Date date=new Date();
     		SimpleDateFormat dateFormat=new SimpleDateFormat("Y");
     		int Year=Integer.valueOf(dateFormat.format(date));
@@ -122,25 +136,26 @@
 	  float mark=resultSet.getFloat("min_Ave");
 	  
 	%>
-	<tr>
-		<td><%=i%></td>
-	<td><%=grade%></td>
-		<td><%=mark%></td>
-	
-	</tr>
-	<%
+							<tr>
+								<td><%=i%></td>
+								<td><%=grade%></td>
+								<td><%=mark%></td>
+
+							</tr>
+							<%
 	
    }
   %>
-  </table>
- 
-  
-  </div>
-</div>
-</div>
-</div></div>
-</div>
-</div>
+						</table>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
 
 </body>
 <%} %>
